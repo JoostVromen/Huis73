@@ -2952,7 +2952,6 @@ let trofee_opmerkingen: string[] = []
 let heeftKat = false
 let pointer: Sprite = null
 let kroon = 0
-let speler: Sprite = null
 let minimap2: Sprite = null
 let level_sprites: Sprite[] = []
 let level = 0
@@ -2978,6 +2977,7 @@ let kat: Sprite = null
 let vis: Sprite = null
 let sleutel_dungeon: Sprite = null
 let sleutel: Sprite = null
+let speler: Sprite = null
 let hitbox: Sprite = null
 maakSpeler()
 init_huis73()
@@ -3003,6 +3003,7 @@ let flame = sprites.create(img`
     `, SpriteKind.Object)
 flame.setFlag(SpriteFlag.Ghost, true)
 tiles.placeOnTile(hitbox, tiles.getTileLocation(24, 44))
+speler.setPosition(hitbox.x, hitbox.y)
 maak_minimap()
 game.setDialogFrame(img`
     ..bbbbbbbbbbbbbbbbbbbb..
@@ -3030,9 +3031,9 @@ game.setDialogFrame(img`
     .bbbbbbbbbbbbbbbbbbbbbb.
     ..bbbbbbbbbbbbbbbbbbbb..
     `)
-game.showLongText("Ontdek hier de wereld van Huis73!", DialogLayout.Center)
+game.showLongText("Ontdek hier de wereld van Huis73!", DialogLayout.Top)
 game.showLongText("Met de 'A' knop kun je dingen openmaken en praten!", DialogLayout.Center)
-game.showLongText("Ga op ontdekkingsreis en verzamel alle items!", DialogLayout.Center)
+game.showLongText("Ga op ontdekkingsreis en verzamel alle items!", DialogLayout.Bottom)
 teken_health()
 // Hitbox logica voor elk frame
 game.onUpdate(function () {
