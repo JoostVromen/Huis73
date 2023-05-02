@@ -1,0 +1,22 @@
+{
+    "image2": {
+        "data": "hwQQABAAAAAAsMzADAAAAADbwRzLAMDMsN3Bu8EA3LHb3cHRDMDdsdvdwRG8u8ux293Bsb0RwbHb3cERsRHBsdvdwbG9EcGx293BEbERwbHb3cGxvRHBsdvdwRGxEcGx293B0by7y7Hb3cHdDMDdsbDdwbvBANyxANvBHMsAwMwAsMzADAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "myImage"
+    },
+    "image1": {
+        "data": "hwQQABAAAAAAAAAAAAAAAPD//////w8A8ETu7u7uDwDwVB4REe0PBvBUHh0d7Q9m8FQeHR3t///wVB4dHe3//vBUHh0d7f/+8FQeHR3t//7wVB4dHe3//vBUHh0d7f//8FQeHR3tD2bwVB4REe0PBvBE7u7u7g8A8P//////DwAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "bord"
+    },
+    "image3": {
+        "data": "hwQMAAwAAAAAAAAAAAAAAADw/wAAAAAAAC9CDwAAAAAALyH0wAAAAAAvIkLPDAAAAPAiIvIMAAAA8CIi8gwAAAAvIiLPDAAAAC8i8sAAAAAALyIPAAAAAADw/wAAAAAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "myImage0"
+    },
+    "*": {
+        "mimeType": "image/x-mkcd-f4",
+        "dataEncoding": "base64",
+        "namespace": "myImages"
+    }
+}
