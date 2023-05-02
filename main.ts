@@ -896,7 +896,7 @@ function init_huis73 () {
         1f11111f11f1f1111f11fffff1ff1fff111
         1fffffff1f1f111111f11f111ff1f111f11
         11111111111111111111111111111111111
-        `, 5, 33, "Scan de QR code voor meer informatie over het voorlezen voor kinderen!", 2)
+        `, 5, 33, "Scan de QR code voor meer informatie over Verhaaltjestijd!", 2)
     maak_qr(img`
         111111111111111111111111111111111111111
         1fffffff1f1111ff1ff11ff1ff1fff1fffffff1
@@ -1148,13 +1148,13 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
         tiles.setWallAt(location, false)
         music.baDing.play()
         Jasper.sayText("Welkom in het Digitaal Atelier!", 3000, false)
-        Brigitta.sayText("Welkom in de Huis73 bibliotheek!", 3000, false)
-        Chris.sayText("Welkom in de CoderDojo!", 3000, false)
-        Minecraft_Steve.sayText("Welkom in de Minecraft workshop!", 3000, false)
-        Marloes.sayText("Welkom bij het voorlezen voor peuters!", 3000, false)
+        Brigitta.sayText("Welkom in de Bibliotheek!", 3000, false)
+        Chris.sayText("Welkom bij de CoderDojo!", 3000, false)
+        Minecraft_Steve.sayText("Welkom bij de Minecraft workshop!", 3000, false)
+        Marloes.sayText("Welkom bij Verhaaltjestijd!", 3000, false)
         npc_kennisbende.sayText("Welkom bij de Bouwen met Bricks!", 3000, false)
-        npc_keramiek.sayText("Welkom bij de keramiek-workshops!", 3000, false)
-        npc_kunst.sayText("Welkom bij alle kunstworkshops!", 3000, false)
+        npc_keramiek.sayText("Welkom in de Keramiekstudio!", 3000, false)
+        npc_kunst.sayText("Welkom in onze Creatieve Ruimte!", 3000, false)
     }
     if (tiles.tileAtLocationEquals(location, assets.tile`myTile20`)) {
         tiles.setTileAt(location, assets.tile`myTile6`)
@@ -1484,7 +1484,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             minimap2.setFlag(SpriteFlag.Invisible, false)
             sprites.setDataBoolean(minimap2, "zichtbaar", true)
             music.powerUp.play()
-            game.showLongText("Er zit een kaart van het land in deze kist!", DialogLayout.Bottom)
+            game.showLongText("Er zit een plattegrond in deze kist!", DialogLayout.Bottom)
             game.showLongText("Druk op de \"B\" knop om hem te openen of te sluiten..", DialogLayout.Bottom)
             rugzak.push(minimap2)
             minimap2.setFlag(SpriteFlag.Invisible, true)
@@ -3030,9 +3030,9 @@ game.setDialogFrame(img`
     .bbbbbbbbbbbbbbbbbbbbbb.
     ..bbbbbbbbbbbbbbbbbbbb..
     `)
-game.showLongText("Welkom bij de wereld van Huis73! \\n Kijk rustig rond wat er allemaal te ontdekken is. ", DialogLayout.Center)
-game.showLongText("Vergeet niet dat je met de \"A\" knop dingen kan openmaken en kan praten!", DialogLayout.Center)
-game.showLongText("Kan jij alle 8 de huizen vinden?", DialogLayout.Center)
+game.showLongText("Ontdek hier de wereld van Huis73!", DialogLayout.Center)
+game.showLongText("Met de 'A' knop kun je dingen openmaken en praten!", DialogLayout.Center)
+game.showLongText("Ga op ontdekkingsreis en verzamel alle items!", DialogLayout.Center)
 teken_health()
 // Hitbox logica voor elk frame
 game.onUpdate(function () {
