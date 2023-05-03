@@ -18,6 +18,8 @@ namespace SpriteKind {
     export const health_collectable = SpriteKind.create()
     export const rugzak_inhoud = SpriteKind.create()
     export const volatile = SpriteKind.create()
+    export const destructable = SpriteKind.create()
+    export const cracks = SpriteKind.create()
 }
 /**
  * Controller functies
@@ -169,6 +171,22 @@ function init_huis73 () {
         . f d f f f d f f d f . . . 
         . f f . . f f . . f f . . . 
         `, SpriteKind.Follow), 6, 36, "", 2)
+    minecraft_pick = level_sprite(sprites.create(img`
+        . . . . f f f f f . . . . . 
+        . 4 e f 9 6 6 6 9 f . . . . 
+        . e 4 9 6 f f f f . . . . . 
+        . f 6 6 f . . . . . . . . . 
+        f 6 9 f e 4 . . . . . . . . 
+        f 6 f . f e 4 . . . . . . . 
+        f 6 f . . f e 4 . . . . . . 
+        f 6 f . . . f e 4 . . . . . 
+        f 9 f . . . . f e 4 . . . . 
+        . f . . . . . . f e 4 . . . 
+        . . . . . . . . . f e 4 . . 
+        . . . . . . . . . . f e 4 . 
+        . . . . . . . . . . . f e 4 
+        . . . . . . . . . . . . f e 
+        `, SpriteKind.Collectable), 32, 57, "", 2)
     RobotArm = level_sprite(sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . f f f f f . . 
@@ -503,6 +521,60 @@ function init_huis73 () {
         . . . . 7 7 7 . . 7 7 7 . . . . 
         . . . . 6 6 6 . . 6 6 6 . . . . 
         `, SpriteKind.Creeper), 36, 58, "", 2)
+    level_sprite(sprites.create(img`
+        f f f f f f f f f f f f f f f f 
+        f d d d d d d d d d d d d d 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f b b b b b b b b b b b b 6 e f 
+        f b b b b b b b b b b 6 6 e b f 
+        f b b e 6 b b b b b b 6 b b b f 
+        f b 6 6 6 6 b b b b b b b b b f 
+        f a a a a a c c c c c c c c c f 
+        f d d 6 6 d d c d d d d d d d f 
+        f b b 6 6 b b c d b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f f f f f f f f f f f f f f f f 
+        `, SpriteKind.destructable), 38, 56, "", 2)
+    level_sprite(sprites.create(img`
+        f f f f f f f f f f f f f f f f 
+        f d d d d d d d d d d d d d 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f b b b b b b b b b b b b 6 e f 
+        f b b b b b b b b b b 6 6 e b f 
+        f b b e 6 b b b b b b 6 b b b f 
+        f b 6 6 6 6 b b b b b b b b b f 
+        f a a a a a c c c c c c c c c f 
+        f d d 6 6 d d c d d d d d d d f 
+        f b b 6 6 b b c d b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f f f f f f f f f f f f f f f f 
+        `, SpriteKind.destructable), 39, 56, "", 2)
+    level_sprite(sprites.create(img`
+        f f f f f f f f f f f f f f f f 
+        f d d d d d d d d d d d d d 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f b b b b b b b b b b b b 6 e f 
+        f b b b b b b b b b b 6 6 e b f 
+        f b b e 6 b b b b b b 6 b b b f 
+        f b 6 6 6 6 b b b b b b b b b f 
+        f a a a a a c c c c c c c c c f 
+        f d d 6 6 d d c d d d d d d d f 
+        f b b 6 6 b b c d b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f f f f f f f f f f f f f f f f 
+        `, SpriteKind.destructable), 39, 57, "", 2)
     level_sprite(sprites.create(img`
         . . f f f . . . . . . . . f f f 
         . f f c c . . . . . . f c b b c 
@@ -1171,9 +1243,15 @@ function nieuw_level (num: number) {
             }
             value.setFlag(SpriteFlag.Ghost, false)
             value.setFlag(SpriteFlag.Invisible, false)
+            if (value.kind() == SpriteKind.destructable) {
+                sprites.readDataSprite(value, "destruct_sprite").setFlag(SpriteFlag.Invisible, false)
+            }
         } else {
             value.setFlag(SpriteFlag.Invisible, true)
             value.setFlag(SpriteFlag.Ghost, true)
+            if (value.kind() == SpriteKind.destructable) {
+                sprites.readDataSprite(value, "destruct_sprite").setFlag(SpriteFlag.Invisible, true)
+            }
         }
     }
 }
@@ -1187,6 +1265,30 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             sprites.setDataBoolean(minimap2, "zichtbaar", true)
         }
     }
+})
+sprites.onCreated(SpriteKind.destructable, function (sprite) {
+    sprites.setDataNumber(sprite, "destruct_level", 0)
+    sprites.setDataSprite(sprite, "destruct_sprite", sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.cracks))
+    sprites.readDataSprite(sprite, "destruct_sprite").setPosition(sprite.x, sprite.y)
+    sprites.readDataSprite(sprite, "destruct_sprite").z = 101
+    sprites.readDataSprite(sprite, "destruct_sprite").setFlag(SpriteFlag.Invisible, false)
 })
 function pijn () {
     if (!(sprites.readDataBoolean(speler, "onkwetsbaar"))) {
@@ -1441,6 +1543,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         if (pointer.overlapsWith(value2)) {
             value2.sayText(sprites.readDataString(value2, "text"), 3000, false)
             music.magicWand.play()
+        }
+    }
+    for (let value2 of sprites.allOfKind(SpriteKind.destructable)) {
+        if (pointer.overlapsWith(value2)) {
+            if (rugzak.indexOf(minecraft_pick) >= 0) {
+                sla_destructable(value2)
+            }
         }
     }
     for (let value22 of sprites.allOfKind(SpriteKind.QR)) {
@@ -2094,6 +2203,22 @@ function teken_rugzak () {
                 . . . . . . f . . . . . 
                 `, SpriteKind.rugzak_inhoud)
             index2 += 1
+        } else if (value6 == minecraft_pick) {
+            mySprite = sprites.create(img`
+                . . . . f f f f f . . . 
+                . e f f 6 6 6 6 9 f . . 
+                . f 9 6 6 f f f f . . . 
+                . f 6 e 4 . . . . . . . 
+                f 6 6 f e 4 . . . . . . 
+                f 6 f . f e 4 . . . . . 
+                f 6 f . . f e 4 . . . . 
+                f 6 f . . . f e 4 . . . 
+                f 9 f . . . . f e 4 . . 
+                . f . . . . . . f e 4 . 
+                . . . . . . . . . f f . 
+                . . . . . . . . . . . . 
+                `, SpriteKind.rugzak_inhoud)
+            index2 += 1
         } else {
             continue;
         }
@@ -2306,6 +2431,94 @@ sprites.onOverlap(SpriteKind.Object, SpriteKind.Vleermuis, function (sprite, oth
         kat.setKind(SpriteKind.Follow)
     }
 })
+function sla_destructable (mySprite: Sprite) {
+    music.play(music.melodyPlayable(music.knock), music.PlaybackMode.InBackground)
+    sprites.changeDataNumberBy(mySprite, "destruct_level", 1)
+    list = [
+    img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f . . . . . . . . . 
+        . . . . . . d f . . . . . . . . 
+        . . . . . . . d . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,
+    img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . f . . . . . . . . . . 
+        . . . . . f . . . . . . . . . . 
+        . . . . . f . . . f f . . . . . 
+        . . . . . d f . f d d . . . . . 
+        . . . . . . d f d . . . . . . . 
+        . . . . . . . f . . . . . . . . 
+        . . . . . . . f . . . . . . . . 
+        . . . . . . f d . . . . . . . . 
+        . . . . . . d . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,
+    img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f . . . . . . . . 
+        . . . . . . f d . . . . . . . . 
+        . . . . . f d . f . . . f . . . 
+        . . . . . f . . f . . f d . . . 
+        . . . f f f . . d f f d . . . . 
+        . . f d d d f . f d d . . . . . 
+        . . d . . . d f d . . . . . . . 
+        . . . . . . . f . . . . . . . . 
+        . . . . . . . f . . . . . . . . 
+        . . . . f f f d . . . . . . . . 
+        . . . . d d d f . . . . . . . . 
+        . . . . . . . d . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,
+    img`
+        . . . . f . . . . . . . . . . . 
+        . . . . d f . f f . . . . . . . 
+        . . . . . d f d d . . . . . . . 
+        . . . f . f d . f . . . f f . . 
+        . . . f . f . . f . . f d d . . 
+        . . . f f f . . d f f d . . . . 
+        . . f d d d f . f d f . . . . . 
+        . f d . . . d f d . d . . . . . 
+        . f . f . . . f . . . . . . . . 
+        . d . d f . . f f . . . . . . . 
+        . . . . f f f d d . . . . . . . 
+        . . . f d d d f . . . . . . . . 
+        . . f d . . . d f f f . . . . . 
+        . . d . . . . . d d d . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `
+    ]
+    if (sprites.readDataNumber(mySprite, "destruct_level") >= 4) {
+        sprites.destroy(sprites.readDataSprite(mySprite, "destruct_sprite"))
+        mySprite.startEffect(effects.disintegrate, 500)
+        mySprite.setFlag(SpriteFlag.Invisible, true)
+        mySprite.setFlag(SpriteFlag.Ghost, true)
+        tiles.setWallAt(mySprite.tilemapLocation(), false)
+    } else {
+        sprites.readDataSprite(mySprite, "destruct_sprite").setImage(list[sprites.readDataNumber(mySprite, "destruct_level")])
+        sprites.readDataSprite(mySprite, "destruct_sprite").setPosition(mySprite.x, mySprite.y)
+    }
+}
 sprites.onCreated(SpriteKind.trofee_collectable, function (sprite) {
     characterAnimations.loopFrames(
     sprite,
@@ -2419,7 +2632,7 @@ function level_sprite (mySprite: Sprite, col: number, row: number, text: string,
     sprites.setDataNumber(mySprite, "level_row", row)
     tiles.placeOnTile(mySprite, tiles.getTileLocation(col, row))
     sprites.setDataNumber(mySprite, "level", level)
-    if (text.length != 0) {
+    if (text.length != 0 || mySprite.kind() == SpriteKind.destructable) {
         sprites.setDataString(mySprite, "text", text)
         mySprite.z = 19
         tiles.setWallAt(tiles.getTileLocation(col, row), true)
@@ -2945,6 +3158,7 @@ let boom2: Sprite = null
 let value8: Sprite = null
 let qrcode: Sprite = null
 let camera_punt: Sprite = null
+let list: Image[] = []
 let myMinimap: minimap.Minimap = null
 let mySprite: Sprite = null
 let index2 = 0
@@ -2973,6 +3187,7 @@ let npc_kennisbende: Sprite = null
 let Marloes: Sprite = null
 let Jasper: Sprite = null
 let RobotArm: Sprite = null
+let minecraft_pick: Sprite = null
 let kat: Sprite = null
 let vis: Sprite = null
 let sleutel_dungeon: Sprite = null
