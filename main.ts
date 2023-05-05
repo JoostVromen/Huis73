@@ -20,6 +20,7 @@ namespace SpriteKind {
     export const volatile = SpriteKind.create()
     export const destructable = SpriteKind.create()
     export const cracks = SpriteKind.create()
+    export const camera_guide = SpriteKind.create()
 }
 /**
  * Controller functies
@@ -186,7 +187,7 @@ function init_huis73 () {
         . . . . . . . . . . f e 4 . 
         . . . . . . . . . . . f e 4 
         . . . . . . . . . . . . f e 
-        `, SpriteKind.Collectable), 32, 57, "", 2)
+        `, SpriteKind.Collectable), 34, 56, "", 2)
     RobotArm = level_sprite(sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . f f f f f . . 
@@ -388,7 +389,7 @@ function init_huis73 () {
         c d d 1 1 d d c 
         . f d d d d f . 
         . . f f f f . . 
-        `, SpriteKind.trofee_collectable), 30, 56, "", 2)
+        `, SpriteKind.trofee_collectable), 33, 58, "", 2)
     coderdojo_trofee = level_sprite(sprites.create(img`
         . . b b b b . . 
         . b 5 5 5 5 b . 
@@ -575,6 +576,78 @@ function init_huis73 () {
         f b b b b b b c b b b b b b b f 
         f f f f f f f f f f f f f f f f 
         `, SpriteKind.destructable), 39, 57, "", 2)
+    level_sprite(sprites.create(img`
+        f f f f f f f f f f f f f f f f 
+        f d d d d d d d d d d d d d 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f b b b b b b b b b b b b 6 e f 
+        f b b b b b b b b b b 6 6 e b f 
+        f b b e 6 b b b b b b 6 b b b f 
+        f b 6 6 6 6 b b b b b b b b b f 
+        f a a a a a c c c c c c c c c f 
+        f d d 6 6 d d c d d d d d d d f 
+        f b b 6 6 b b c d b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f f f f f f f f f f f f f f f f 
+        `, SpriteKind.destructable), 30, 56, "", 2)
+    level_sprite(sprites.create(img`
+        f f f f f f f f f f f f f f f f 
+        f d d d d d d d d d d d d d 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f b b b b b b b b b b b b 6 e f 
+        f b b b b b b b b b b 6 6 e b f 
+        f b b e 6 b b b b b b 6 b b b f 
+        f b 6 6 6 6 b b b b b b b b b f 
+        f a a a a a c c c c c c c c c f 
+        f d d 6 6 d d c d d d d d d d f 
+        f b b 6 6 b b c d b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f f f f f f f f f f f f f f f f 
+        `, SpriteKind.destructable), 29, 56, "", 2)
+    level_sprite(sprites.create(img`
+        f f f f f f f f f f f f f f f f 
+        f d d d d d d d d d d d d d 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f b b b b b b b b b b b b 6 e f 
+        f b b b b b b b b b b 6 6 e b f 
+        f b b e 6 b b b b b b 6 b b b f 
+        f b 6 6 6 6 b b b b b b b b b f 
+        f a a a a a c c c c c c c c c f 
+        f d d 6 6 d d c d d d d d d d f 
+        f b b 6 6 b b c d b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f f f f f f f f f f f f f f f f 
+        `, SpriteKind.destructable), 28, 57, "", 2)
+    level_sprite(sprites.create(img`
+        f f f f f f f f f f f f f f f f 
+        f d d d d d d d d d d d d d 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f d b b b b b b b b b b b 6 6 f 
+        f b b b b b b b b b b b b 6 e f 
+        f b b b b b b b b b b 6 6 e b f 
+        f b b e 6 b b b b b b 6 b b b f 
+        f b 6 6 6 6 b b b b b b b b b f 
+        f a a a a a c c c c c c c c c f 
+        f d d 6 6 d d c d d d d d d d f 
+        f b b 6 6 b b c d b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b 6 b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f b b b b b b c b b b b b b b f 
+        f f f f f f f f f f f f f f f f 
+        `, SpriteKind.destructable), 37, 1, "", 2)
     level_sprite(sprites.create(img`
         . . f f f . . . . . . . . f f f 
         . f f c c . . . . . . f c b b c 
@@ -1610,6 +1683,25 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
+function geheime_gang () {
+    for (let value of tiles.getTilesByType(sprites.dungeon.doorOpenNorth)) {
+        if (value.row != hitbox.tilemapLocation().row || value.column != hitbox.tilemapLocation().column) {
+            tiles.placeOnTile(hitbox, value)
+            scene.cameraShake(2, 2000)
+            scene.cameraFollowSprite(camera_punt)
+            sprites.setDataNumber(camera_punt, "ticks", 5)
+            for (let value2 of sprites.allOfKind(SpriteKind.destructable)) {
+                if (value.row == value2.tilemapLocation().row || value.column != value2.tilemapLocation().column) {
+                    value2.startEffect(effects.disintegrate, 500)
+                    value2.setFlag(SpriteFlag.Invisible, true)
+                    value2.setFlag(SpriteFlag.Ghost, true)
+                    tiles.setWallAt(value2.tilemapLocation(), false)
+                }
+            }
+            break;
+        }
+    }
+}
 // De speler krijgt de kat
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Follow, function (sprite, otherSprite) {
     if (rugzak.indexOf(vis) >= 0) {
@@ -1722,6 +1814,27 @@ function maakSpeler () {
     speler.setFlag(SpriteFlag.Ghost, true)
     speler.z = 20
     controller.moveSprite(hitbox, 90, 90)
+    camera_punt = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f . . . . . . . . 
+        . . . . f f f f f f f . . . . . 
+        . . . f . . . f . . . f . . . . 
+        . . f . . . . f . . . . f . . . 
+        . . f . . . . f . . . . f . . . 
+        . . f . . . . f . . . . f . . . 
+        . f f f f f f . f f f f f f . . 
+        . . f . . . . f . . . . f . . . 
+        . . f . . . . f . . . . f . . . 
+        . . f . . . . f . . . . f . . . 
+        . . . f . . . f . . . f . . . . 
+        . . . . f f f f f f f . . . . . 
+        . . . . . . . f . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
+    camera_punt.setFlag(SpriteFlag.Invisible, true)
+    camera_punt.setFlag(SpriteFlag.Ghost, true)
+    camera_punt.follow(hitbox, 600)
     scene.cameraFollowSprite(hitbox)
     pointer = sprites.create(img`
         . . . . . . . . . . . . . . . . 
@@ -2584,28 +2697,7 @@ sprites.onCreated(SpriteKind.trofee_collectable, function (sprite) {
 function eindfeest () {
     controller.moveSprite(hitbox, 0, 0)
     tiles.placeOnTile(hitbox, tiles.getTileLocation(23, 44))
-    camera_punt = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Object)
     scene.cameraFollowSprite(camera_punt)
-    camera_punt.setPosition(speler.x, speler.y)
-    camera_punt.follow(hitbox, 400)
-    camera_punt.setFlag(SpriteFlag.Ghost, true)
     speler.setFlag(SpriteFlag.Invisible, true)
     hitbox.setFlag(SpriteFlag.Ghost, true)
     effects.confetti.startScreenEffect(5000)
@@ -2621,7 +2713,6 @@ function eindfeest () {
     } else {
         controller.moveSprite(hitbox, 100, 100)
         scene.cameraFollowSprite(hitbox)
-        camera_punt.destroy()
         speler.setFlag(SpriteFlag.Invisible, false)
         hitbox.setFlag(SpriteFlag.Ghost, false)
     }
@@ -3153,11 +3244,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Creeper, function (sprite, other
 /**
  * Begin van het spel
  */
+let entry_disabled = 0
 let kerker_gezien = 0
 let boom2: Sprite = null
 let value8: Sprite = null
 let qrcode: Sprite = null
-let camera_punt: Sprite = null
 let list: Image[] = []
 let myMinimap: minimap.Minimap = null
 let mySprite: Sprite = null
@@ -3192,6 +3283,7 @@ let kat: Sprite = null
 let vis: Sprite = null
 let sleutel_dungeon: Sprite = null
 let sleutel: Sprite = null
+let camera_punt: Sprite = null
 let speler: Sprite = null
 let hitbox: Sprite = null
 maakSpeler()
@@ -3219,6 +3311,7 @@ let flame = sprites.create(img`
 flame.setFlag(SpriteFlag.Ghost, true)
 tiles.placeOnTile(hitbox, tiles.getTileLocation(24, 44))
 speler.setPosition(hitbox.x, hitbox.y)
+camera_punt.setPosition(hitbox.x, hitbox.y)
 maak_minimap()
 game.setDialogFrame(img`
     ..bbbbbbbbbbbbbbbbbbbb..
@@ -3325,6 +3418,22 @@ game.onUpdateInterval(12000, function () {
         }
     }
 })
+game.onUpdateInterval(500, function () {
+    for (let value of sprites.allOfKind(SpriteKind.volatile)) {
+        sprites.changeDataNumberBy(value, "ticks", -1)
+        if (sprites.readDataNumber(value, "ticks") <= 0) {
+            sprites.destroy(value)
+        }
+    }
+    if (sprites.readDataNumber(camera_punt, "ticks") > 0) {
+        sprites.changeDataNumberBy(camera_punt, "ticks", -1)
+    } else if (sprites.readDataNumber(camera_punt, "ticks") == 0) {
+        sprites.changeDataNumberBy(camera_punt, "ticks", -1)
+        scene.cameraFollowSprite(hitbox)
+    } else {
+    	
+    }
+})
 // Level specifieke AI
 game.onUpdateInterval(500, function () {
     if (level == 2) {
@@ -3344,6 +3453,14 @@ game.onUpdateInterval(500, function () {
             laad_grot()
             tiles.placeOnTile(hitbox, tiles.getTileLocation(7, 14))
         }
+        if (speler.tileKindAt(TileDirection.Center, sprites.dungeon.doorOpenNorth)) {
+            if (entry_disabled == 0) {
+                entry_disabled = 1
+                geheime_gang()
+            }
+        } else {
+            entry_disabled = 0
+        }
     } else if (level == 1) {
         if (speler.tileKindAt(TileDirection.Center, sprites.dungeon.doorClosedSouth) && level == 1) {
             laad_huis73()
@@ -3354,14 +3471,6 @@ game.onUpdateInterval(500, function () {
         myMinimap = minimap.minimap(MinimapScale.Sixteenth, 2, 1)
         minimap.getImage(myMinimap).fillRect(speler.x / 16 + 1, speler.y / 16 + 1, 2, 2, 1)
         minimap2.setImage(minimap.getImage(myMinimap))
-    }
-})
-game.onUpdateInterval(500, function () {
-    for (let value of sprites.allOfKind(SpriteKind.volatile)) {
-        sprites.changeDataNumberBy(value, "ticks", -1)
-        if (sprites.readDataNumber(value, "ticks") <= 0) {
-            sprites.destroy(value)
-        }
     }
 })
 // Knipperen bij onkwetsbaarheid
