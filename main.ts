@@ -21,6 +21,7 @@ namespace SpriteKind {
     export const destructable = SpriteKind.create()
     export const cracks = SpriteKind.create()
     export const camera_guide = SpriteKind.create()
+    export const klei = SpriteKind.create()
 }
 /**
  * Controller functies
@@ -434,6 +435,60 @@ function init_huis73 () {
     level_sprite(sprites.create(assets.image`myImage0`, SpriteKind.health_collectable), 3, 49, "", 2)
     level_sprite(sprites.create(assets.image`myImage0`, SpriteKind.health_collectable), 57, 34, "", 2)
     level_sprite(sprites.create(assets.image`myImage0`, SpriteKind.health_collectable), 19, 41, "", 2)
+    level_sprite(sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . . . 
+        . . . . f b d b b f . . . . . . 
+        . . . f d d d d b b f . . . . . 
+        . . f d d d d d d c b f . . . . 
+        . . f d d d d d d c b f . . . . 
+        . f d d d d d d b b c b f . . . 
+        . f b d d d d d d b b b f . . . 
+        . . f c d d d d b b b f . . . . 
+        . . . f f b b c b f f . . . . . 
+        . . . . . f f f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.klei), 17, 5, "", 2)
+    level_sprite(sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . . . 
+        . . . . f b d b b f . . . . . . 
+        . . . f d d d d b b f . . . . . 
+        . . f d d d d d d c b f . . . . 
+        . . f d d d d d d c b f . . . . 
+        . f d d d d d d b b c b f . . . 
+        . f b d d d d d d b b b f . . . 
+        . . f c d d d d b b b f . . . . 
+        . . . f f b b c b f f . . . . . 
+        . . . . . f f f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.klei), 17, 4, "", 2)
+    level_sprite(sprites.create(img`
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        .ffffffffffffffffffffffffffffffffffffffffffffff.
+        .f11111111111111111111111111111111111111111111f.
+        .f1e11111811111f111f1fff1fff11fff11111811111e1f.
+        .f1111111811111f111f1f111f11f1f111111181111111f.
+        .f1111188888111f111f1ff11fff11ff11118888811111f.
+        .f11111188811111f1f11f111f1f11f111111888111111f.
+        .f111111181111111f111fff1f11f1f111111181111111f.
+        .fccccccccccccccccccccccccccccccccccccccccccccf.
+        `, SpriteKind.Object), 21, 1, "", 2)
     level_sprite(sprites.create(img`
         . . . . . . f f f f . . . . . . 
         . . . . . f d d f f . . . . . . 
@@ -1379,6 +1434,125 @@ function pijn () {
         }
     }
 }
+function doe_klei (mySprite: Sprite) {
+    list = [
+    img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . f f f f . . . . . . . 
+        . . . . f b d b b f . . . . . . 
+        . . . f d d d d b b f . . . . . 
+        . . f d d d d d d c b f . . . . 
+        . . f d d d d d d c b f . . . . 
+        . f d d d d d d b b c b f . . . 
+        . f b d d d d d d b b b f . . . 
+        . . f c d d d d b b b f . . . . 
+        . . . f f b b c b f f . . . . . 
+        . . . . . f f f f . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,
+    img`
+        . . . . . . f f f f . . . . . . 
+        . . . . . f d d d d f . . . . . 
+        . . . . . . f b b f . . . . . . 
+        . . . . . . f d d f . . . . . . 
+        . . . . . f d d d b f . . . . . 
+        . . . . f d d d d b b f . . . . 
+        . . . f d d d d d d b b f . . . 
+        . . . f d d d d d d b b f . . . 
+        . . . f d d d d d b b b f . . . 
+        . . . . f d d b b b b f . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,
+    img`
+        . . . . f f f f f f f . . . . . 
+        . . . f 1 d d d d d d f . . . . 
+        . . f 1 d d d d d d d d f . . . 
+        . . f d d d d d d d d d f . . . 
+        . . f d d d d d d d d d f . . . 
+        . . f d d d d d d d d d f . . . 
+        . . f d d d d d d d d b f . . . 
+        . . f d d d d d d d d b f . . . 
+        . . f d d d d d d d d b f . . . 
+        . . . f d d d d d b b f . . . . 
+        . . b b f f f f f f f b b . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,
+    img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . f f f f . . . . . . 
+        . . . . . f 1 d d b f . . . . . 
+        . . . . . . f d b f . . . . . . 
+        . . . . . . f d b f . . . . . . 
+        . . . . . f f d b f f . . . . . 
+        . . . . f 1 d d d d b f . . . . 
+        . . . . f d d d d d b f . . . . 
+        . . . . f d d d d b b f . . . . 
+        . . . . . f f f f f f . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `,
+    img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . f f . . . . . . . 
+        . . . . . . f d b f . . . . . . 
+        . . . . . f f d b f f . . . . . 
+        . . . f f d f d b f b f f . . . 
+        . . f 1 d d f d b f b b b f . . 
+        . . f d d d b b b b d d b f . . 
+        . . . f d d 1 1 1 1 d b f . . . 
+        . . . . f f f f f f f f . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `
+    ]
+    if (rugzak.indexOf(verf) < 0) {
+        sprites.changeDataNumberBy(mySprite, "frame", 1)
+        if (sprites.readDataNumber(mySprite, "frame") > 4) {
+            sprites.setDataNumber(mySprite, "frame", 0)
+        }
+        music.play(music.createSoundEffect(WaveShape.Noise, 1, 3496, 255, 0, 175, SoundExpressionEffect.Warble, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
+        mySprite.setImage(list[sprites.readDataNumber(mySprite, "frame")])
+    } else {
+        mySprite.setImage(list[sprites.readDataNumber(mySprite, "frame")])
+        if (sprites.readDataString(verf, "kleur") == "blauw") {
+            mySprite.image.replace(13, 6)
+            mySprite.image.replace(11, 8)
+            mySprite.image.replace(1, 9)
+        } else if (sprites.readDataString(verf, "kleur") == "rood") {
+            mySprite.image.replace(13, 2)
+            mySprite.image.replace(11, 14)
+            mySprite.image.replace(1, 3)
+        } else if (sprites.readDataString(verf, "kleur") == "paars") {
+            mySprite.image.replace(11, 12)
+            mySprite.image.replace(13, 10)
+            mySprite.image.replace(1, 11)
+        } else {
+        	
+        }
+    }
+}
 function draag_kroon () {
     characterAnimations.loopFrames(
     speler,
@@ -1610,6 +1784,34 @@ function draag_kroon () {
     )
     kroon = 1
 }
+function doelen_tooltip () {
+    zoekDoelwit(speler)
+    for (let value of sprites.allOfKind(SpriteKind.NPC)) {
+        if (pointer.overlapsWith(value) && sprites.readDataNumber(tooltip, "ticks") == 0) {
+            tooltip = sprites.create(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . f f f f . . . . . . 
+                . . . . . f d d d d f . . . . . 
+                . . . . . f 5 5 5 5 f . . . . . 
+                . . . . . f 5 5 5 5 f . . . . . 
+                . . . . . f 5 5 5 5 f . . . . . 
+                . . . . . . f 5 5 f . . . . . . 
+                . . . . . . f 5 5 f . . . . . . 
+                . . . . . . f 5 5 f . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . f d d f . . . . . . 
+                . . . . . . f 5 5 f . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, SpriteKind.volatile)
+            tooltip.setFlag(SpriteFlag.Ghost, true)
+            tooltip.setPosition(value.x - 0, value.y - 16)
+            sprites.setDataNumber(tooltip, "ticks", 10)
+        }
+    }
+}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     zoekDoelwit(speler)
     for (let value2 of sprites.allOfKind(SpriteKind.NPC)) {
@@ -1641,6 +1843,11 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     for (let value4 of sprites.allOfKind(SpriteKind.Laptop)) {
         if (pointer.overlapsWith(value4)) {
             music.pewPew.play()
+        }
+    }
+    for (let value4 of sprites.allOfKind(SpriteKind.klei)) {
+        if (pointer.overlapsWith(value4)) {
+            doe_klei(value4)
         }
     }
     if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile30`) || tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile31`)) {
@@ -1681,6 +1888,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             music.magicWand.play()
             draag_kroon()
         }
+    }
+    if (pointer.tilemapLocation().row == 2 && (pointer.tilemapLocation().column >= 20 && pointer.tilemapLocation().column <= 22)) {
+        pak_verf()
     }
 })
 function geheime_gang () {
@@ -2332,10 +2542,13 @@ function teken_rugzak () {
                 . . . . . . . . . . . . 
                 `, SpriteKind.rugzak_inhoud)
             index2 += 1
+        } else if (value6 == verf) {
+            mySprite = sprites.create(verf.image, SpriteKind.rugzak_inhoud)
+            index2 += 1
         } else {
             continue;
         }
-        mySprite.setPosition(113 + index2 * 13, 6)
+        mySprite.setPosition(87 + index2 * 13, 6)
         mySprite.setFlag(SpriteFlag.RelativeToCamera, true)
         mySprite.z = 100
     }
@@ -2511,6 +2724,77 @@ sprites.onCreated(SpriteKind.Vleermuis, function (sprite) {
     characterAnimations.rule(Predicate.MovingRight)
     )
 })
+function pak_verf () {
+    if (rugzak.indexOf(verf) >= 0) {
+        rugzak.removeAt(rugzak.indexOf(verf))
+    }
+    if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile7`)) {
+        tiles.setTileAt(tiles.getTileLocation(20, 2), assets.tile`myTile89`)
+        tiles.setTileAt(tiles.getTileLocation(21, 2), assets.tile`myTile93`)
+        tiles.setTileAt(tiles.getTileLocation(22, 2), assets.tile`myTile94`)
+        teken_rugzak()
+        return
+    }
+    tiles.setTileAt(tiles.getTileLocation(20, 2), assets.tile`myTile89`)
+    tiles.setTileAt(tiles.getTileLocation(21, 2), assets.tile`myTile93`)
+    tiles.setTileAt(tiles.getTileLocation(22, 2), assets.tile`myTile94`)
+    if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile89`)) {
+        tiles.setTileAt(tiles.getTileLocation(20, 2), assets.tile`myTile7`)
+        verf = sprites.create(img`
+            . . . . . . . . . . . . 
+            . . . . f f f f . . . . 
+            . . . f 9 9 9 9 f . . . 
+            . . f 9 9 9 9 9 9 f . . 
+            . . f f 9 9 9 9 f f . . 
+            . . f 6 f f f f 6 f . . 
+            . . f 6 6 6 6 6 6 f . . 
+            . . f 6 6 6 6 6 6 f . . 
+            . . f 6 1 1 1 6 6 f . . 
+            . . . f 6 6 6 6 f . . . 
+            . . . . f f f f . . . . 
+            . . . . . . . . . . . . 
+            `, SpriteKind.Object)
+        sprites.setDataString(verf, "kleur", "blauw")
+    } else if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile93`)) {
+        tiles.setTileAt(tiles.getTileLocation(21, 2), assets.tile`myTile7`)
+        verf = sprites.create(img`
+            . . . . . . . . . . . . 
+            . . . . f f f f . . . . 
+            . . . f 2 2 2 2 f . . . 
+            . . f 2 2 2 2 2 2 f . . 
+            . . f f 2 2 2 2 f f . . 
+            . . f 2 f f f f 2 f . . 
+            . . f 2 2 2 2 2 2 f . . 
+            . . f 2 2 2 2 2 2 f . . 
+            . . f 2 1 1 1 2 2 f . . 
+            . . . f 2 2 2 2 f . . . 
+            . . . . f f f f . . . . 
+            . . . . . . . . . . . . 
+            `, SpriteKind.Object)
+        sprites.setDataString(verf, "kleur", "rood")
+    } else if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile94`)) {
+        tiles.setTileAt(tiles.getTileLocation(22, 2), assets.tile`myTile7`)
+        verf = sprites.create(img`
+            . . . . . . . . . . . . 
+            . . . . f f f f . . . . 
+            . . . f b b b b f . . . 
+            . . f b b b b b b f . . 
+            . . f f b b b b f f . . 
+            . . f a f f f f a f . . 
+            . . f a a a a a a f . . 
+            . . f a a a a a a f . . 
+            . . f a 1 1 1 a a f . . 
+            . . . f a a a a f . . . 
+            . . . . f f f f . . . . 
+            . . . . . . . . . . . . 
+            `, SpriteKind.Object)
+        sprites.setDataString(verf, "kleur", "paars")
+    } else {
+    	
+    }
+    rugzak.push(verf)
+    teken_rugzak()
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Vleermuis, function (sprite, otherSprite) {
     pijn()
 })
@@ -3249,14 +3533,16 @@ let kerker_gezien = 0
 let boom2: Sprite = null
 let value8: Sprite = null
 let qrcode: Sprite = null
-let list: Image[] = []
 let myMinimap: minimap.Minimap = null
-let mySprite: Sprite = null
 let index2 = 0
 let trofee_opmerkingen: string[] = []
 let heeftKat = false
+let tooltip: Sprite = null
 let pointer: Sprite = null
 let kroon = 0
+let mySprite: Sprite = null
+let verf: Sprite = null
+let list: Image[] = []
 let minimap2: Sprite = null
 let level_sprites: Sprite[] = []
 let level = 0
@@ -3346,79 +3632,89 @@ teken_health()
 // Hitbox logica voor elk frame
 game.onUpdate(function () {
     speler.setPosition(hitbox.x, hitbox.y)
+    for (let value of sprites.allOfKind(SpriteKind.volatile)) {
+        if (sprites.readDataBoolean(value, "attached")) {
+            value.setPosition(sprites.readDataSprite(value, "attached_sprite").x + sprites.readDataNumber(value, "offset_x"), sprites.readDataSprite(value, "attached_sprite").y + sprites.readDataNumber(value, "offset_y"))
+        }
+    }
 })
 // Animaties die af en toe afspelen
 game.onUpdateInterval(12000, function () {
     if (level == 2) {
         RobotArm.startEffect(effects.fountain, 400)
-        if (!(heeftKat)) {
-            if (Math.percentChance(50)) {
-                mySprite = sprites.create(img`
-                    .......fffffffff........
-                    ......f111111111f.......
-                    .....f11111bbb111f......
-                    ....f111bbbdddb111f.....
-                    ...f111bd44bddb1b11f....
-                    ...f11b44144bddbb11f....
-                    ...f1b4f41441bb4b11f....
-                    ...f1f4441441444b11f....
-                    ...f1f4441441ff4f11f....
-                    ...f11f4d44df11ff11f....
-                    ...f111f444fdb11f11f....
-                    ....f111fffddb1111f.....
-                    .....f11111bb1111f......
-                    ......f111111111f.......
-                    .......fffffffff........
-                    ........................
-                    ............ff..........
-                    ...........fd1f.........
-                    ...........fddf.........
-                    ............ff..........
-                    ..........f.............
-                    .........f1f............
-                    ..........f.............
-                    ........f...............
-                    `, SpriteKind.volatile)
-            } else {
-                mySprite = sprites.create(img`
-                    .......fffffffff........
-                    ......f1f1111111f.......
-                    .....f1fc11111111f......
-                    ....f1ffc111111ff1f.....
-                    ...f1ffc3c3c1ffcbc1f....
-                    ...f1fcbbbcffbbcc11f....
-                    ...f1cb1bb1fbbcbc11f....
-                    ...f1cbbbbbbbbcbc11f....
-                    ...f1fbcbbcbbcccc11f....
-                    ...f1fb1ff1bbbfc111f....
-                    ...f11fbbbbbbcfcc11f....
-                    ....f11fbbbbcf1111f.....
-                    .....f11fffff1111f......
-                    ......f111111111f.......
-                    .......fffffffff........
-                    ........................
-                    ............ff..........
-                    ...........fd1f.........
-                    ...........fddf.........
-                    ............ff..........
-                    ..........f.............
-                    .........f1f............
-                    ..........f.............
-                    ........f...............
-                    `, SpriteKind.volatile)
-            }
-            animation.runMovementAnimation(
-            mySprite,
-            animation.animationPresets(animation.bobbing),
-            6000,
-            true
-            )
-            mySprite.setPosition(kat.x + 2, kat.y - 18)
-            sprites.setDataNumber(mySprite, "ticks", 6)
+        if (Math.percentChance(50) != heeftKat) {
+            mySprite = sprites.create(img`
+                .......fffffffff........
+                ......f111111111f.......
+                .....f11111bbb111f......
+                ....f111bbbdddb111f.....
+                ...f111bd44bddb1b11f....
+                ...f11b44144bddbb11f....
+                ...f1b4f41441bb4b11f....
+                ...f1f4441441444b11f....
+                ...f1f4441441ff4f11f....
+                ...f11f4d44df11ff11f....
+                ...f111f444fdb11f11f....
+                ....f111fffddb1111f.....
+                .....f11111bb1111f......
+                ......f111111111f.......
+                .......fffffffff........
+                ........................
+                ............ff..........
+                ...........fd1f.........
+                ...........fddf.........
+                ............ff..........
+                ..........f.............
+                .........f1f............
+                ..........f.............
+                ........f...............
+                `, SpriteKind.volatile)
+        } else {
+            mySprite = sprites.create(img`
+                .......fffffffff........
+                ......f1f1111111f.......
+                .....f1fc11111111f......
+                ....f1ffc111111ff1f.....
+                ...f1ffc3c3c1ffcbc1f....
+                ...f1fcbbbcffbbcc11f....
+                ...f1cb1bb1fbbcbc11f....
+                ...f1cbbbbbbbbcbc11f....
+                ...f1fbcbbcbbcccc11f....
+                ...f1fb1ff1bbbfc111f....
+                ...f11fbbbbbbcfcc11f....
+                ....f11fbbbbcf1111f.....
+                .....f11fffff1111f......
+                ......f111111111f.......
+                .......fffffffff........
+                ........................
+                ............ff..........
+                ...........fd1f.........
+                ...........fddf.........
+                ............ff..........
+                ..........f.............
+                .........f1f............
+                ..........f.............
+                ........f...............
+                `, SpriteKind.volatile)
         }
+        if (heeftKat) {
+            sprites.setDataSprite(mySprite, "attached_sprite", kat)
+            sprites.setDataBoolean(mySprite, "attached", true)
+            sprites.setDataNumber(mySprite, "offset_x", 2)
+            sprites.setDataNumber(mySprite, "offset_y", -18)
+        }
+        animation.runMovementAnimation(
+        mySprite,
+        animation.animationPresets(animation.bobbing),
+        6000,
+        true
+        )
+        mySprite.setPosition(kat.x + 2, kat.y - 18)
+        sprites.setDataNumber(mySprite, "ticks", 6)
     }
 })
 game.onUpdateInterval(500, function () {
+    doelen_tooltip()
     for (let value of sprites.allOfKind(SpriteKind.volatile)) {
         sprites.changeDataNumberBy(value, "ticks", -1)
         if (sprites.readDataNumber(value, "ticks") <= 0) {
