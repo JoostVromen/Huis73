@@ -452,7 +452,7 @@ function init_huis73 () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.klei), 17, 5, "", 2)
+        `, SpriteKind.klei), 21, 2, "", 2)
     level_sprite(sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . f f f f . . . . . . . 
@@ -470,7 +470,7 @@ function init_huis73 () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        `, SpriteKind.klei), 17, 4, "", 2)
+        `, SpriteKind.klei), 22, 2, "", 2)
     level_sprite(sprites.create(img`
         ................................................
         ................................................
@@ -488,6 +488,24 @@ function init_huis73 () {
         .f11111188811111f1f11f111f1f11f111111888111111f.
         .f111111181111111f111fff1f11f1f111111181111111f.
         .fccccccccccccccccccccccccccccccccccccccccccccf.
+        `, SpriteKind.Object), 18, 1, "", 2)
+    level_sprite(sprites.create(img`
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................................................
+        ................ffffffffffffffffffffffffffffffff
+        ................f111111111111111111111111111111f
+        ................f1111111f11f1f111fff11f11111111f
+        ................f1114111f1f11f111f1111f11141111f
+        ................f1144411ff111f111ff111f11444111f
+        ................f1114111f1f11f111f1111f11141111f
+        ................f1111111f11f1fff1fff11f11111111f
+        ................cccccccccccccccccccccccccccccccc
         `, SpriteKind.Object), 21, 1, "", 2)
     level_sprite(sprites.create(img`
         . . . . . . f f f f . . . . . . 
@@ -1174,7 +1192,7 @@ function init_huis73 () {
         1f11111f111111ffff1f11f111f11fff111
         1fffffff1fffff11f1f1f111ff1ff111f11
         11111111111111111111111111111111111
-        `, 24, 2, "Scan de QR code voor meer informatie over Huis73 keramiek workshops!", 2)
+        `, 17, 5, "Scan de QR code voor meer informatie over Huis73 keramiek workshops!", 2)
     maak_qr(img`
         1111111111111111111111111111111
         1fffffff11f11f11f11ff11fffffff1
@@ -1435,6 +1453,7 @@ function pijn () {
     }
 }
 function doe_klei (mySprite: Sprite) {
+    keramiek_beschikbaar = 1
     list = [
     img`
         . . . . . . . . . . . . . . . . 
@@ -1533,24 +1552,25 @@ function doe_klei (mySprite: Sprite) {
             sprites.setDataNumber(mySprite, "frame", 0)
         }
         music.play(music.createSoundEffect(WaveShape.Noise, 1, 3496, 255, 0, 175, SoundExpressionEffect.Warble, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
-        mySprite.setImage(list[sprites.readDataNumber(mySprite, "frame")])
     } else {
-        mySprite.setImage(list[sprites.readDataNumber(mySprite, "frame")])
-        if (sprites.readDataString(verf, "kleur") == "blauw") {
-            mySprite.image.replace(13, 6)
-            mySprite.image.replace(11, 8)
-            mySprite.image.replace(1, 9)
-        } else if (sprites.readDataString(verf, "kleur") == "rood") {
-            mySprite.image.replace(13, 2)
-            mySprite.image.replace(11, 14)
-            mySprite.image.replace(1, 3)
-        } else if (sprites.readDataString(verf, "kleur") == "paars") {
-            mySprite.image.replace(11, 12)
-            mySprite.image.replace(13, 10)
-            mySprite.image.replace(1, 11)
-        } else {
-        	
-        }
+        sprites.setDataString(mySprite, "kleur", sprites.readDataString(verf, "kleur"))
+        music.play(music.createSoundEffect(WaveShape.Sine, 687, 1846, 58, 161, 120, SoundExpressionEffect.Warble, InterpolationCurve.Curve), music.PlaybackMode.InBackground)
+    }
+    mySprite.setImage(list[sprites.readDataNumber(mySprite, "frame")])
+    if (sprites.readDataString(mySprite, "kleur") == "blauw") {
+        mySprite.image.replace(13, 6)
+        mySprite.image.replace(11, 8)
+        mySprite.image.replace(1, 9)
+    } else if (sprites.readDataString(mySprite, "kleur") == "rood") {
+        mySprite.image.replace(13, 2)
+        mySprite.image.replace(11, 14)
+        mySprite.image.replace(1, 3)
+    } else if (sprites.readDataString(mySprite, "kleur") == "paars") {
+        mySprite.image.replace(11, 12)
+        mySprite.image.replace(13, 10)
+        mySprite.image.replace(1, 11)
+    } else {
+    	
     }
 }
 function draag_kroon () {
@@ -1816,8 +1836,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     zoekDoelwit(speler)
     for (let value2 of sprites.allOfKind(SpriteKind.NPC)) {
         if (pointer.overlapsWith(value2)) {
-            value2.sayText(sprites.readDataString(value2, "text"), 3000, false)
-            music.magicWand.play()
+            if (value2 == npc_keramiek && keramiek_beschikbaar) {
+                doe_bak_keramiek()
+            } else {
+                value2.sayText(sprites.readDataString(value2, "text"), 3000, false)
+                music.magicWand.play()
+            }
         }
     }
     for (let value2 of sprites.allOfKind(SpriteKind.destructable)) {
@@ -1889,7 +1913,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             draag_kroon()
         }
     }
-    if (pointer.tilemapLocation().row == 2 && (pointer.tilemapLocation().column >= 20 && pointer.tilemapLocation().column <= 22)) {
+    if (pointer.tilemapLocation().row == 2 && (pointer.tilemapLocation().column >= 17 && pointer.tilemapLocation().column <= 19)) {
         pak_verf()
     }
 })
@@ -2729,17 +2753,17 @@ function pak_verf () {
         rugzak.removeAt(rugzak.indexOf(verf))
     }
     if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile7`)) {
-        tiles.setTileAt(tiles.getTileLocation(20, 2), assets.tile`myTile89`)
-        tiles.setTileAt(tiles.getTileLocation(21, 2), assets.tile`myTile93`)
-        tiles.setTileAt(tiles.getTileLocation(22, 2), assets.tile`myTile94`)
+        tiles.setTileAt(tiles.getTileLocation(17, 2), assets.tile`myTile89`)
+        tiles.setTileAt(tiles.getTileLocation(18, 2), assets.tile`myTile93`)
+        tiles.setTileAt(tiles.getTileLocation(19, 2), assets.tile`myTile94`)
         teken_rugzak()
         return
     }
-    tiles.setTileAt(tiles.getTileLocation(20, 2), assets.tile`myTile89`)
-    tiles.setTileAt(tiles.getTileLocation(21, 2), assets.tile`myTile93`)
-    tiles.setTileAt(tiles.getTileLocation(22, 2), assets.tile`myTile94`)
+    tiles.setTileAt(tiles.getTileLocation(17, 2), assets.tile`myTile89`)
+    tiles.setTileAt(tiles.getTileLocation(18, 2), assets.tile`myTile93`)
+    tiles.setTileAt(tiles.getTileLocation(19, 2), assets.tile`myTile94`)
     if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile89`)) {
-        tiles.setTileAt(tiles.getTileLocation(20, 2), assets.tile`myTile7`)
+        tiles.setTileAt(tiles.getTileLocation(17, 2), assets.tile`myTile7`)
         verf = sprites.create(img`
             . . . . . . . . . . . . 
             . . . . f f f f . . . . 
@@ -2756,7 +2780,7 @@ function pak_verf () {
             `, SpriteKind.Object)
         sprites.setDataString(verf, "kleur", "blauw")
     } else if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile93`)) {
-        tiles.setTileAt(tiles.getTileLocation(21, 2), assets.tile`myTile7`)
+        tiles.setTileAt(tiles.getTileLocation(18, 2), assets.tile`myTile7`)
         verf = sprites.create(img`
             . . . . . . . . . . . . 
             . . . . f f f f . . . . 
@@ -2773,7 +2797,7 @@ function pak_verf () {
             `, SpriteKind.Object)
         sprites.setDataString(verf, "kleur", "rood")
     } else if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile94`)) {
-        tiles.setTileAt(tiles.getTileLocation(22, 2), assets.tile`myTile7`)
+        tiles.setTileAt(tiles.getTileLocation(19, 2), assets.tile`myTile7`)
         verf = sprites.create(img`
             . . . . . . . . . . . . 
             . . . . f f f f . . . . 
@@ -3525,6 +3549,10 @@ function init_grot () {
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Creeper, function (sprite, otherSprite) {
     pijn()
 })
+function doe_bak_keramiek () {
+    npc_keramiek.sayText("Ah, je bent klaar!", 3000, false)
+    npc_keramiek.sayText("Ik zal je werk snel afbakken en tentoonstellen!", 3000, false)
+}
 /**
  * Begin van het spel
  */
@@ -3543,6 +3571,7 @@ let kroon = 0
 let mySprite: Sprite = null
 let verf: Sprite = null
 let list: Image[] = []
+let keramiek_beschikbaar = 0
 let minimap2: Sprite = null
 let level_sprites: Sprite[] = []
 let level = 0
