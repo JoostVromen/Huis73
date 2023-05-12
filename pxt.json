@@ -6,7 +6,9 @@
         "device": "*",
         "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0",
         "arcade-character-animations": "github:microsoft/arcade-character-animations#v0.0.2",
-        "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1"
+        "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0",
+        "arcade-tilemap-a-star": "github:jwunderl/arcade-tilemap-a-star#v0.4.0"
     },
     "files": [
         "main.blocks",

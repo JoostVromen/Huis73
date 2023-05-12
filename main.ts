@@ -103,6 +103,7 @@ sprites.onCreated(SpriteKind.health_collectable, function (sprite) {
     )
 })
 function init_huis73 () {
+    maak_npcs()
     sleutel = level_sprite(sprites.create(img`
         . . f f f f . . . . . . . . . . 
         . f 4 5 5 5 f . . . . . . . . . 
@@ -261,24 +262,6 @@ function init_huis73 () {
         . . . f f f f f f . . . . 
         . . . f f . . f f . . . . 
         `, SpriteKind.NPC), 55, 5, "Die sleutel is van de Mysterieuze Kerker...", 2)
-    npc_keramiek = level_sprite(sprites.create(img`
-        . . . . . . 5 . 5 . . . . . . . 
-        . . . . . f 5 5 5 f f . . . . . 
-        . . . . f 1 5 2 5 1 6 f . . . . 
-        . . . f 1 6 6 6 6 6 1 6 f . . . 
-        . . . f 6 6 f f f f 6 1 f . . . 
-        . . . f 6 f f d d f f 6 f . . . 
-        . . f 6 f d f d d f d f 6 f . . 
-        . . f 6 f d 3 d d 3 d f 6 f . . 
-        . . f 6 6 f d d d d f 6 6 f . . 
-        . f 6 6 f 3 f f f f 3 f 6 6 f . 
-        . . f f d 3 5 3 3 5 3 d f f . . 
-        . . f d d f 3 5 5 3 f d d f . . 
-        . . . f f 3 3 3 3 3 3 f f . . . 
-        . . . f 3 3 5 3 3 5 3 3 f . . . 
-        . . . f f f f f f f f f f . . . 
-        . . . . . f f . . f f . . . . . 
-        `, SpriteKind.NPC), 22, 4, "Verderop in het bos ligt Bouwen met Bricks!", 2)
     npc_kunst = level_sprite(sprites.create(img`
         . . . . f f f f . . . . . 
         . . f f f f f f f f . . . 
@@ -435,7 +418,7 @@ function init_huis73 () {
     level_sprite(sprites.create(assets.image`myImage0`, SpriteKind.health_collectable), 3, 49, "", 2)
     level_sprite(sprites.create(assets.image`myImage0`, SpriteKind.health_collectable), 57, 34, "", 2)
     level_sprite(sprites.create(assets.image`myImage0`, SpriteKind.health_collectable), 19, 41, "", 2)
-    level_sprite(sprites.create(img`
+    klei1 = level_sprite(sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . f f f f . . . . . . . 
         . . . . f b d b b f . . . . . . 
@@ -453,7 +436,7 @@ function init_huis73 () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.klei), 21, 2, "", 2)
-    level_sprite(sprites.create(img`
+    klei2 = level_sprite(sprites.create(img`
         . . . . . . . . . . . . . . . . 
         . . . . . f f f f . . . . . . . 
         . . . . f b d b b f . . . . . . 
@@ -2585,6 +2568,277 @@ function maak_minimap () {
     minimap2.z = 120
     minimap2.setFlag(SpriteFlag.Invisible, true)
 }
+function maak_npcs () {
+    npc_keramiek = level_sprite(sprites.create(img`
+        . . . . . . 5 . 5 . . . . . . . 
+        . . . . . f 5 5 5 f f . . . . . 
+        . . . . f 1 5 2 5 1 6 f . . . . 
+        . . . f 1 6 6 6 6 6 1 6 f . . . 
+        . . . f 6 6 f f f f 6 1 f . . . 
+        . . . f 6 f f d d f f 6 f . . . 
+        . . f 6 f d f d d f d f 6 f . . 
+        . . f 6 f d 3 d d 3 d f 6 f . . 
+        . . f 6 6 f d d d d f 6 6 f . . 
+        . f 6 6 f 3 f f f f 3 f 6 6 f . 
+        . . f f d 3 5 3 3 5 3 d f f . . 
+        . . f d d f 3 5 5 3 f d d f . . 
+        . . . f f 3 3 3 3 3 3 f f . . . 
+        . . . f 3 3 5 3 3 5 3 3 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . . f f . . f f . . . . . 
+        `, SpriteKind.NPC), 22, 4, "Verderop in het bos ligt Bouwen met Bricks!", 2)
+    characterAnimations.loopFrames(
+    npc_keramiek,
+    [img`
+        . . . . . . 5 . 5 . . . . . . . 
+        . . . . . f 5 5 5 f f . . . . . 
+        . . . . f 1 5 2 5 1 6 f . . . . 
+        . . . f 1 6 6 6 6 6 1 6 f . . . 
+        . . . f 6 6 f f f f 6 1 f . . . 
+        . . . f 6 f f d d f f 6 f . . . 
+        . . f 6 f d f d d f d f 6 f . . 
+        . . f 6 f d 3 d d 3 d f 6 f . . 
+        . . f 6 6 f d d d d f 6 6 f . . 
+        . f 6 6 f 3 f f f f 3 f 6 6 f . 
+        . . f f d 3 5 3 3 5 3 d f f . . 
+        . . f d d f 3 5 5 3 f d d f . . 
+        . . . f f 3 3 3 3 3 3 f f . . . 
+        . . . f 3 3 5 3 3 5 3 3 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . . f f . . f f . . . . . 
+        `,img`
+        . . . . . . 5 . 5 . . . . . . . 
+        . . . . . f 5 5 5 f f . . . . . 
+        . . . . f 1 5 2 5 1 6 f . . . . 
+        . . . f 1 6 6 6 6 6 1 6 f . . . 
+        . . . f 6 6 f f f f 6 1 f . . . 
+        . . . f 6 f f d d f f 6 f . . . 
+        . . f 6 f d f d d f d f 6 f . . 
+        . . f 6 f d 3 d d 3 d f 6 f . . 
+        . . f 6 6 f d d d d f 6 6 f . . 
+        . f 6 6 f 3 f f f f 3 f 6 6 f . 
+        . . f f 3 3 5 3 3 5 3 d f f . . 
+        . . . f d f 3 5 5 3 f f d f . . 
+        . . . f d f 3 3 3 3 3 f f . . . 
+        . . . f f 3 5 3 3 5 3 3 f . . . 
+        . . . . f f f f f f f f f . . . 
+        . . . . . . . . . f f . . . . . 
+        `,img`
+        . . . . . . 5 . 5 . . . . . . . 
+        . . . . . f 5 5 5 f f . . . . . 
+        . . . . f 1 5 2 5 1 6 f . . . . 
+        . . . f 1 6 6 6 6 6 1 6 f . . . 
+        . . . f 6 6 f f f f 6 1 f . . . 
+        . . . f 6 f f d d f f 6 f . . . 
+        . . f 6 f d f d d f d f 6 f . . 
+        . . f 6 f d 3 d d 3 d f 6 f . . 
+        . . f 6 6 f d d d d f 6 6 f . . 
+        . f 6 6 f 3 f f f f 3 f 6 6 f . 
+        . . f f d 3 5 3 3 5 3 3 f f . . 
+        . . f d f f 3 5 5 3 f d f . . . 
+        . . . f f 3 3 3 3 3 f d f . . . 
+        . . . f 3 3 5 3 3 5 3 f f . . . 
+        . . . f f f f f f f f f . . . . 
+        . . . . . f f . . . . . . . . . 
+        `],
+    100,
+    characterAnimations.rule(Predicate.MovingDown, Predicate.FacingDown)
+    )
+    characterAnimations.loopFrames(
+    npc_keramiek,
+    [img`
+        . . . . . . 5 . 5 . . . . . . . 
+        . . . . . f 5 5 5 f . . . . . . 
+        . . . . f 6 2 5 5 6 f . . . . . 
+        . . . f 6 6 6 6 1 6 6 f . . . . 
+        . . . f 6 6 6 6 6 1 6 f . . . . 
+        . . . f d f d 6 6 6 1 f . . . . 
+        . . . f d f d 6 6 6 6 f f . . . 
+        . . . f d 3 d d 6 6 6 f 6 f . . 
+        . . . . f d d d f f 6 f f . . . 
+        . . . . . f f 5 3 f 6 6 6 f . . 
+        . . . . f 5 3 3 f f f f f . . . 
+        . . . . f 3 3 f d f . . . . . . 
+        . . . . . f 3 f d f . . . . . . 
+        . . . . f 3 5 3 f d f . . . . . 
+        . . . . f f 3 3 f f . . . . . . 
+        . . . . . . f f f . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 5 . 5 . . . . . . 
+        . . . . . . f 5 5 5 f . . . . . 
+        . . . . . f 6 2 5 5 6 f . . . . 
+        . . . . f 6 6 6 6 1 6 6 f . . . 
+        . . . . f 6 6 6 6 6 1 6 f . . . 
+        . . . . f d f d 6 6 6 1 f . . . 
+        . . . . f d f d 6 6 6 6 f f . . 
+        . . . . f d 3 d d 6 6 6 f 6 f . 
+        . . . . . f d d d f f 6 f f . . 
+        . . . . . . f f 3 3 f f 6 6 f . 
+        . . . . . f d d d d f f f f . . 
+        . . . . . f d d d f 3 f . . . . 
+        . . . . . . f f f d 5 3 f . . . 
+        . . . . . f f f 3 3 f f . . . . 
+        . . . . . f f f f f f f . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 5 . 5 . . . . . . 
+        . . . . . . f 5 5 5 f . . . . . 
+        . . . . . f 6 2 5 5 6 f . . . . 
+        . . . . f 6 6 6 6 1 6 6 f . . . 
+        . . . . f 6 6 6 6 6 1 6 f . . . 
+        . . . . f d f d 6 6 6 1 f . . . 
+        . . . . f d f d 6 6 6 6 f f . . 
+        . . . . f d 3 d d 6 6 6 f 6 f . 
+        . . . . . f d d d f f 6 f f . . 
+        . . . . . . f f 3 3 f f 6 6 f . 
+        . . . . . f 5 3 3 d d f f f . . 
+        . . . . . f 3 3 3 f d d f . . . 
+        . . . . . . f 3 5 f f f . . . . 
+        . . . . . f 3 3 3 3 f . . . . . 
+        . . . . . . f f f f f . . . . . 
+        `],
+    100,
+    characterAnimations.rule(Predicate.MovingLeft, Predicate.FacingLeft)
+    )
+    characterAnimations.loopFrames(
+    npc_keramiek,
+    [img`
+        . . . . . . . 5 . 5 . . . . . . 
+        . . . . . . f 5 5 5 f . . . . . 
+        . . . . . f 6 5 5 2 6 f . . . . 
+        . . . . f 6 6 1 6 6 6 6 f . . . 
+        . . . . f 6 1 6 6 6 6 6 f . . . 
+        . . . . f 1 6 6 6 d f d f . . . 
+        . . . f f 6 6 6 6 d f d f . . . 
+        . . f 6 f 6 6 6 d d 3 d f . . . 
+        . . . f f 6 f f d d d f . . . . 
+        . . f 6 6 6 f 3 5 f f . . . . . 
+        . . . f f f f f 3 3 5 f . . . . 
+        . . . . . . f d f 3 3 f . . . . 
+        . . . . . . f d f 3 f . . . . . 
+        . . . . . f d f 3 5 3 f . . . . 
+        . . . . . . f f 3 3 f f . . . . 
+        . . . . . . . f f f . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . 5 . 5 . . . . . . . 
+        . . . . . f 5 5 5 f . . . . . . 
+        . . . . f 6 5 5 2 6 f . . . . . 
+        . . . f 6 6 1 6 6 6 6 f . . . . 
+        . . . f 6 1 6 6 6 6 6 f . . . . 
+        . . . f 1 6 6 6 d f d f . . . . 
+        . . f f 6 6 6 6 d f d f . . . . 
+        . f 6 f 6 6 6 d d 3 d f . . . . 
+        . . f f 6 f f d d d f . . . . . 
+        . f 6 6 f f 3 3 f f . . . . . . 
+        . . f f f f d d d d f . . . . . 
+        . . . . f 3 f d d d f . . . . . 
+        . . . f 3 5 d f f f . . . . . . 
+        . . . . f f 3 3 f f f . . . . . 
+        . . . . f f f f f f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . 5 . 5 . . . . . . . 
+        . . . . . f 5 5 5 f . . . . . . 
+        . . . . f 6 5 5 2 6 f . . . . . 
+        . . . f 6 6 1 6 6 6 6 f . . . . 
+        . . . f 6 1 6 6 6 6 6 f . . . . 
+        . . . f 1 6 6 6 d f d f . . . . 
+        . . f f 6 6 6 6 d f d f . . . . 
+        . f 6 f 6 6 6 d d 3 d f . . . . 
+        . . f f 6 f f d d d f . . . . . 
+        . f 6 6 f f 3 3 f f . . . . . . 
+        . . f f f d d 3 3 5 f . . . . . 
+        . . . f d d f 3 3 3 f . . . . . 
+        . . . . f f f 5 3 f . . . . . . 
+        . . . . . f 3 3 3 3 f . . . . . 
+        . . . . . f f f f f . . . . . . 
+        `],
+    100,
+    characterAnimations.rule(Predicate.MovingRight, Predicate.FacingRight)
+    )
+    characterAnimations.loopFrames(
+    npc_keramiek,
+    [img`
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . f 5 5 5 5 f . . . . . 
+        . . . . f 6 6 6 6 6 6 f . . . . 
+        . . . f 6 1 1 1 6 1 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . f f 6 6 6 6 6 6 6 6 f f . . 
+        . f 6 6 6 f 6 6 6 6 f 6 6 6 f . 
+        . . f f f 3 f f f f 3 f f f . . 
+        . . . f d 5 3 3 3 3 5 d f . . . 
+        . . f d d f 3 3 3 3 f d d f . . 
+        . . . f f f 5 3 3 5 f f f . . . 
+        . . . . f 3 3 5 5 3 3 f . . . . 
+        . . . . f 3 3 3 3 3 3 f . . . . 
+        . . . . . f f f f f f . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . f 5 5 5 5 f . . . . . 
+        . . . . f 6 6 6 6 6 6 f . . . . 
+        . . . f 6 1 1 1 6 1 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . f f 6 6 6 6 6 6 6 6 f f . . 
+        . f 6 6 6 f 6 6 6 6 f 6 6 6 f . 
+        . . f f f 3 f f f f 5 f f f . . 
+        . . . f d f 3 3 3 3 d d f . . . 
+        . . . . f 3 5 3 3 f d d f . . . 
+        . . . . f 3 3 5 5 3 f f . . . . 
+        . . . . f f 3 3 f f . . . . . . 
+        . . . . . . f f . . . . . . . . 
+        `,img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . f 5 5 5 5 f . . . . . 
+        . . . . f 6 6 6 6 6 6 f . . . . 
+        . . . f 6 1 1 1 6 1 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . f f 6 6 6 6 6 6 6 6 f f . . 
+        . f 6 6 6 f 6 6 6 6 f 6 6 6 f . 
+        . . f f f 5 f f f f 3 f f f . . 
+        . . . f d d 3 3 3 3 f d f . . . 
+        . . . f d d f 3 3 5 3 f . . . . 
+        . . . . f f 3 5 5 3 3 f . . . . 
+        . . . . . . f f 3 3 f f . . . . 
+        . . . . . . . . f f . . . . . . 
+        `],
+    100,
+    characterAnimations.rule(Predicate.MovingUp, Predicate.FacingUp)
+    )
+    characterAnimations.loopFrames(
+    npc_keramiek,
+    [img`
+        . . . . . . . 5 5 . . . . . . . 
+        . . . . . f 5 5 5 5 f . . . . . 
+        . . . . f 6 6 6 6 6 6 f . . . . 
+        . . . f 6 1 1 1 6 1 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . . f 6 6 6 6 6 6 6 6 f . . . 
+        . . f f 6 6 6 6 6 6 6 6 f f . . 
+        . f 6 6 6 f 6 6 6 6 f 6 6 6 f . 
+        . . f f f 3 f f f f 3 f f f . . 
+        . . . f d 5 3 3 3 3 5 d f . . . 
+        . . f d d f 3 3 3 3 f d d f . . 
+        . . . f f f 5 3 3 5 f f f . . . 
+        . . . . f 3 3 5 5 3 3 f . . . . 
+        . . . . f 3 3 3 3 3 3 f . . . . 
+        . . . . . f f f f f f . . . . . 
+        `],
+    100,
+    characterAnimations.rule(Predicate.NotMoving, Predicate.FacingUp)
+    )
+}
 function zoekDoelwit (bron: Sprite) {
     if (characterAnimations.matchesRule(bron, characterAnimations.rule(Predicate.FacingUp))) {
         tiles.placeOnTile(pointer, bron.tilemapLocation().getNeighboringLocation(CollisionDirection.Top))
@@ -3034,8 +3288,10 @@ function level_sprite (mySprite: Sprite, col: number, row: number, text: string,
     if (text.length != 0 || mySprite.kind() == SpriteKind.destructable) {
         sprites.setDataString(mySprite, "text", text)
         mySprite.z = 19
-        tiles.setWallAt(tiles.getTileLocation(col, row), true)
-        sprites.setDataBoolean(mySprite, "wall", true)
+        if (mySprite.kind() != SpriteKind.NPC) {
+            tiles.setWallAt(tiles.getTileLocation(col, row), true)
+            sprites.setDataBoolean(mySprite, "wall", true)
+        }
     } else {
         sprites.setDataBoolean(mySprite, "wall", false)
     }
@@ -3550,13 +3806,83 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Creeper, function (sprite, other
     pijn()
 })
 function doe_bak_keramiek () {
-    npc_keramiek.sayText("Ah, je bent klaar!", 3000, false)
-    npc_keramiek.sayText("Ik zal je werk snel afbakken en tentoonstellen!", 3000, false)
+    timer.background(function () {
+        npc_keramiek.sayText("Ah, je bent klaar!", 2000, false)
+        pause(2000)
+        npc_keramiek.sayText("Ik zal je werk snel afbakken en tentoonstellen!", 3000, false)
+        pause(500)
+        scene.followPath(npc_keramiek, scene.aStar(npc_keramiek.tilemapLocation(), tiles.getTileLocation(22, 3)), 50)
+        while (scene.spriteIsFollowingPath(npc_keramiek)) {
+            pause(100)
+        }
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
+        klei1.setFlag(SpriteFlag.Invisible, true)
+        klei1.setFlag(SpriteFlag.Ghost, true)
+        pause(500)
+        characterAnimations.clearCharacterState(npc_keramiek)
+        scene.followPath(npc_keramiek, scene.aStar(npc_keramiek.tilemapLocation(), tiles.getTileLocation(21, 3)), 50)
+        while (scene.spriteIsFollowingPath(npc_keramiek)) {
+            pause(100)
+        }
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
+        klei2.setFlag(SpriteFlag.Invisible, true)
+        klei2.setFlag(SpriteFlag.Ghost, true)
+        pause(500)
+        characterAnimations.clearCharacterState(npc_keramiek)
+        scene.followPath(npc_keramiek, scene.aStar(npc_keramiek.tilemapLocation(), tiles.getTileLocation(24, 3)), 50)
+        while (scene.spriteIsFollowingPath(npc_keramiek)) {
+            pause(100)
+        }
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
+        pause(500)
+        characterAnimations.clearCharacterState(npc_keramiek)
+        vuur = sprites.create(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `, SpriteKind.Object)
+        tiles.placeOnTile(vuur, tiles.getTileLocation(24, 2))
+        vuur.y += 4
+        animation.runImageAnimation(
+        vuur,
+        [img`
+            . . . . . . f f f 4 . . . . . . 
+            . . . . f 4 f 5 4 f f 4 . . . . 
+            . . f 4 f 4 5 4 4 2 5 f f f . . 
+            . . f 5 4 4 2 5 4 5 4 4 4 f . . 
+            . . f 4 4 5 4 5 2 4 5 2 5 f . . 
+            . . f d d b d b d d b d b f . . 
+            `,img`
+            . . . . . 4 f f f f . 4 . . . . 
+            . . . 4 f f f 4 5 4 f f . . . . 
+            . . f f 4 5 4 5 4 4 5 f f f . . 
+            . . f 2 5 4 2 5 2 4 2 4 5 f . . 
+            . . f 4 5 4 5 4 4 5 4 2 5 f . . 
+            . . f d d b d b d d b d b f . . 
+            `,img`
+            . . . 4 . f f 4 f f . . . . . . 
+            . . . f f f f 5 4 f f f . . . . 
+            . . f f 5 2 4 5 4 2 4 f 5 f . . 
+            . . f 4 4 5 5 4 4 5 2 4 2 f . . 
+            . . f 4 2 4 4 2 4 5 4 4 4 f . . 
+            . . f d d b d b d d b d b f . . 
+            `],
+        200,
+        true
+        )
+        timer.after(5000, function () {
+            sprites.destroy(vuur)
+        })
+    })
 }
 /**
  * Begin van het spel
  */
 let entry_disabled = 0
+let vuur: Sprite = null
 let kerker_gezien = 0
 let boom2: Sprite = null
 let value8: Sprite = null
@@ -3575,7 +3901,10 @@ let keramiek_beschikbaar = 0
 let minimap2: Sprite = null
 let level_sprites: Sprite[] = []
 let level = 0
+let npc_keramiek: Sprite = null
 let rugzak: Sprite[] = []
+let klei2: Sprite = null
+let klei1: Sprite = null
 let kennisbende_trofee: Sprite = null
 let keramiek_trofee: Sprite = null
 let kunst_trofee: Sprite = null
@@ -3588,7 +3917,6 @@ let Chris: Sprite = null
 let Minecraft_Steve: Sprite = null
 let Brigitta: Sprite = null
 let npc_kunst: Sprite = null
-let npc_keramiek: Sprite = null
 let npc_kennisbende: Sprite = null
 let Marloes: Sprite = null
 let Jasper: Sprite = null
