@@ -454,6 +454,42 @@ function init_huis73 () {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, SpriteKind.klei), 22, 2, "", 2)
+    klei_display1 = level_sprite(sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Object), 19, 6, "", 2)
+    klei_display2 = level_sprite(sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Object), 22, 6, "", 2)
     level_sprite(sprites.create(img`
         ................................................
         ................................................
@@ -1395,48 +1431,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
-sprites.onCreated(SpriteKind.destructable, function (sprite) {
-    sprites.setDataNumber(sprite, "destruct_level", 0)
-    sprites.setDataSprite(sprite, "destruct_sprite", sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.cracks))
-    sprites.readDataSprite(sprite, "destruct_sprite").setPosition(sprite.x, sprite.y)
-    sprites.readDataSprite(sprite, "destruct_sprite").z = 101
-    sprites.readDataSprite(sprite, "destruct_sprite").setFlag(SpriteFlag.Invisible, false)
-})
-function pijn () {
-    if (!(sprites.readDataBoolean(speler, "onkwetsbaar"))) {
-        sprites.changeDataNumberBy(speler, "health", -1)
-        music.zapped.play()
-        scene.cameraShake(2, 200)
-        teken_health()
-        if (sprites.readDataNumber(speler, "health") <= 0) {
-            music.wawawawaa.play()
-            game.over(false, effects.melt)
-        } else {
-            sprites.setDataBoolean(speler, "onzichtbaar", false)
-            sprites.setDataBoolean(speler, "onkwetsbaar", true)
-            sprites.setDataNumber(speler, "eind_onkwetsbaar_tijd", game.runtime() + 1500)
-        }
-    }
-}
-function doe_klei (mySprite: Sprite) {
-    keramiek_beschikbaar = 1
+function maak_klei_sprite (mySprite: Sprite) {
     list = [
     img`
         . . . . . . . . . . . . . . . . 
@@ -1458,12 +1453,12 @@ function doe_klei (mySprite: Sprite) {
         `,
     img`
         . . . . . . f f f f . . . . . . 
-        . . . . . f d d d d f . . . . . 
+        . . . . . f 1 d d d f . . . . . 
         . . . . . . f b b f . . . . . . 
         . . . . . . f d d f . . . . . . 
         . . . . . f d d d b f . . . . . 
-        . . . . f d d d d b b f . . . . 
-        . . . f d d d d d d b b f . . . 
+        . . . . f 1 d d d b b f . . . . 
+        . . . f 1 d d d d d b b f . . . 
         . . . f d d d d d d b b f . . . 
         . . . f d d d d d b b b f . . . 
         . . . . f d d b b b b f . . . . 
@@ -1527,11 +1522,94 @@ function doe_klei (mySprite: Sprite) {
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
+        `,
+    img`
+        . . . . . . . f . . . . . . . . 
+        . . . . . . f b f . . . . . . . 
+        . . . . . . f d f . . . . . . . 
+        . . . . . f 1 d d f . . . . . . 
+        . . f f f 1 d d d d f f f . . . 
+        . f 1 d f d d d d d f 1 d f . . 
+        . f b f f b d d d d f f d f . . 
+        . f b b f b b d d b f b b f . . 
+        . . f f f b b b b b f f f . . . 
+        . . . . f f f f f f f . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
         `
     ]
+    mySprite.setImage(list[sprites.readDataNumber(mySprite, "frame")])
+    if (sprites.readDataString(mySprite, "kleur") == "blauw") {
+        mySprite.image.replace(13, 6)
+        mySprite.image.replace(11, 8)
+        if (!(sprites.readDataBoolean(mySprite, "gebakken"))) {
+            mySprite.image.replace(1, 9)
+        }
+    } else if (sprites.readDataString(mySprite, "kleur") == "rood") {
+        mySprite.image.replace(13, 2)
+        mySprite.image.replace(11, 14)
+        if (!(sprites.readDataBoolean(mySprite, "gebakken"))) {
+            mySprite.image.replace(1, 3)
+        }
+    } else if (sprites.readDataString(mySprite, "kleur") == "paars") {
+        mySprite.image.replace(11, 12)
+        mySprite.image.replace(13, 10)
+        if (!(sprites.readDataBoolean(mySprite, "gebakken"))) {
+            mySprite.image.replace(1, 11)
+        }
+    } else {
+    	
+    }
+}
+sprites.onCreated(SpriteKind.destructable, function (sprite) {
+    sprites.setDataNumber(sprite, "destruct_level", 0)
+    sprites.setDataSprite(sprite, "destruct_sprite", sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.cracks))
+    sprites.readDataSprite(sprite, "destruct_sprite").setPosition(sprite.x, sprite.y)
+    sprites.readDataSprite(sprite, "destruct_sprite").z = 101
+    sprites.readDataSprite(sprite, "destruct_sprite").setFlag(SpriteFlag.Invisible, false)
+})
+function pijn () {
+    if (!(sprites.readDataBoolean(speler, "onkwetsbaar"))) {
+        sprites.changeDataNumberBy(speler, "health", -1)
+        music.zapped.play()
+        scene.cameraShake(2, 200)
+        teken_health()
+        if (sprites.readDataNumber(speler, "health") <= 0) {
+            music.wawawawaa.play()
+            game.over(false, effects.melt)
+        } else {
+            sprites.setDataBoolean(speler, "onzichtbaar", false)
+            sprites.setDataBoolean(speler, "onkwetsbaar", true)
+            sprites.setDataNumber(speler, "eind_onkwetsbaar_tijd", game.runtime() + 1500)
+        }
+    }
+}
+function doe_klei (mySprite: Sprite) {
+    keramiek_beschikbaar = 1
     if (rugzak.indexOf(verf) < 0) {
         sprites.changeDataNumberBy(mySprite, "frame", 1)
-        if (sprites.readDataNumber(mySprite, "frame") > 4) {
+        if (sprites.readDataNumber(mySprite, "frame") > 5) {
             sprites.setDataNumber(mySprite, "frame", 0)
         }
         music.play(music.createSoundEffect(WaveShape.Noise, 1, 3496, 255, 0, 175, SoundExpressionEffect.Warble, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
@@ -1539,22 +1617,7 @@ function doe_klei (mySprite: Sprite) {
         sprites.setDataString(mySprite, "kleur", sprites.readDataString(verf, "kleur"))
         music.play(music.createSoundEffect(WaveShape.Sine, 687, 1846, 58, 161, 120, SoundExpressionEffect.Warble, InterpolationCurve.Curve), music.PlaybackMode.InBackground)
     }
-    mySprite.setImage(list[sprites.readDataNumber(mySprite, "frame")])
-    if (sprites.readDataString(mySprite, "kleur") == "blauw") {
-        mySprite.image.replace(13, 6)
-        mySprite.image.replace(11, 8)
-        mySprite.image.replace(1, 9)
-    } else if (sprites.readDataString(mySprite, "kleur") == "rood") {
-        mySprite.image.replace(13, 2)
-        mySprite.image.replace(11, 14)
-        mySprite.image.replace(1, 3)
-    } else if (sprites.readDataString(mySprite, "kleur") == "paars") {
-        mySprite.image.replace(11, 12)
-        mySprite.image.replace(13, 10)
-        mySprite.image.replace(1, 11)
-    } else {
-    	
-    }
+    maak_klei_sprite(mySprite)
 }
 function draag_kroon () {
     characterAnimations.loopFrames(
@@ -2586,7 +2649,7 @@ function maak_npcs () {
         . . . f 3 3 5 3 3 5 3 3 f . . . 
         . . . f f f f f f f f f f . . . 
         . . . . . f f . . f f . . . . . 
-        `, SpriteKind.NPC), 22, 4, "Verderop in het bos ligt Bouwen met Bricks!", 2)
+        `, SpriteKind.NPC), 22, 4, "Probeer gerust zelf een vaas te maken. Laat je me weten als je klaar bent?", 2)
     characterAnimations.loopFrames(
     npc_keramiek,
     [img`
@@ -2838,6 +2901,29 @@ function maak_npcs () {
     100,
     characterAnimations.rule(Predicate.NotMoving, Predicate.FacingUp)
     )
+    characterAnimations.loopFrames(
+    npc_keramiek,
+    [img`
+        . . . . . . 5 . 5 . . . . . . . 
+        . . . . . f 5 5 5 f f . . . . . 
+        . . . . f 1 5 2 5 1 6 f . . . . 
+        . . . f 1 6 6 6 6 6 1 6 f . . . 
+        . . . f 6 6 f f f f 6 1 f . . . 
+        . . . f 6 f f d d f f 6 f . . . 
+        . . f 6 f d f d d f d f 6 f . . 
+        . . f 6 f d 3 d d 3 d f 6 f . . 
+        . . f 6 6 f d d d d f 6 6 f . . 
+        . f 6 6 f 3 f f f f 3 f 6 6 f . 
+        . . f f d 3 5 3 3 5 3 d f f . . 
+        . . f d d f 3 5 5 3 f d d f . . 
+        . . . f f 3 3 3 3 3 3 f f . . . 
+        . . . f 3 3 5 3 3 5 3 3 f . . . 
+        . . . f f f f f f f f f f . . . 
+        . . . . . f f . . f f . . . . . 
+        `],
+    100,
+    characterAnimations.rule(Predicate.NotMoving, Predicate.FacingDown)
+    )
 }
 function zoekDoelwit (bron: Sprite) {
     if (characterAnimations.matchesRule(bron, characterAnimations.rule(Predicate.FacingUp))) {
@@ -2848,6 +2934,12 @@ function zoekDoelwit (bron: Sprite) {
         tiles.placeOnTile(pointer, bron.tilemapLocation().getNeighboringLocation(CollisionDirection.Left))
     } else if (characterAnimations.matchesRule(bron, characterAnimations.rule(Predicate.FacingRight))) {
         tiles.placeOnTile(pointer, bron.tilemapLocation().getNeighboringLocation(CollisionDirection.Right))
+    }
+}
+function move_npc (mySprite: Sprite, col: number, row: number) {
+    scene.followPath(mySprite, scene.aStar(mySprite.tilemapLocation(), tiles.getTileLocation(col, row)), 50)
+    while (scene.spriteIsFollowingPath(mySprite)) {
+        pause(100)
     }
 }
 sprites.onCreated(SpriteKind.Vleermuis, function (sprite) {
@@ -3807,32 +3899,29 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Creeper, function (sprite, other
 })
 function doe_bak_keramiek () {
     timer.background(function () {
+        sprites.setDataBoolean(klei_display1, "gebakken", true)
+        sprites.setDataBoolean(klei_display2, "gebakken", true)
+        sprites.setDataString(klei_display1, "kleur", sprites.readDataString(klei1, "kleur"))
+        sprites.setDataString(klei_display2, "kleur", sprites.readDataString(klei2, "kleur"))
+        sprites.setDataNumber(klei_display1, "frame", sprites.readDataNumber(klei1, "frame"))
+        sprites.setDataNumber(klei_display2, "frame", sprites.readDataNumber(klei2, "frame"))
         npc_keramiek.sayText("Ah, je bent klaar!", 2000, false)
         pause(2000)
         npc_keramiek.sayText("Ik zal je werk snel afbakken en tentoonstellen!", 3000, false)
         pause(500)
-        scene.followPath(npc_keramiek, scene.aStar(npc_keramiek.tilemapLocation(), tiles.getTileLocation(22, 3)), 50)
-        while (scene.spriteIsFollowingPath(npc_keramiek)) {
-            pause(100)
-        }
+        move_npc(npc_keramiek, 22, 3)
         characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
         klei1.setFlag(SpriteFlag.Invisible, true)
         klei1.setFlag(SpriteFlag.Ghost, true)
         pause(500)
         characterAnimations.clearCharacterState(npc_keramiek)
-        scene.followPath(npc_keramiek, scene.aStar(npc_keramiek.tilemapLocation(), tiles.getTileLocation(21, 3)), 50)
-        while (scene.spriteIsFollowingPath(npc_keramiek)) {
-            pause(100)
-        }
+        move_npc(npc_keramiek, 21, 3)
         characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
         klei2.setFlag(SpriteFlag.Invisible, true)
         klei2.setFlag(SpriteFlag.Ghost, true)
         pause(500)
         characterAnimations.clearCharacterState(npc_keramiek)
-        scene.followPath(npc_keramiek, scene.aStar(npc_keramiek.tilemapLocation(), tiles.getTileLocation(24, 3)), 50)
-        while (scene.spriteIsFollowingPath(npc_keramiek)) {
-            pause(100)
-        }
+        move_npc(npc_keramiek, 24, 3)
         characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
         pause(500)
         characterAnimations.clearCharacterState(npc_keramiek)
@@ -3873,9 +3962,83 @@ function doe_bak_keramiek () {
         200,
         true
         )
-        timer.after(5000, function () {
+        timer.after(3000, function () {
             sprites.destroy(vuur)
         })
+        move_npc(npc_keramiek, 22, 3)
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
+        pause(500)
+        klei2.setFlag(SpriteFlag.Invisible, false)
+        klei2.setFlag(SpriteFlag.Ghost, false)
+        klei2.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . f f f f . . . . . . . 
+            . . . . f b d b b f . . . . . . 
+            . . . f d d d d b b f . . . . . 
+            . . f d d d d d d c b f . . . . 
+            . . f d d d d d d c b f . . . . 
+            . f d d d d d d b b c b f . . . 
+            . f b d d d d d d b b b f . . . 
+            . . f c d d d d b b b f . . . . 
+            . . . f f b b c b f f . . . . . 
+            . . . . . f f f f . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+        sprites.setDataNumber(klei2, "frame", 0)
+        sprites.setDataString(klei2, "kleur", "grijs")
+        characterAnimations.clearCharacterState(npc_keramiek)
+        move_npc(npc_keramiek, 21, 3)
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
+        pause(500)
+        klei1.setFlag(SpriteFlag.Invisible, false)
+        klei1.setFlag(SpriteFlag.Ghost, false)
+        klei1.setImage(img`
+            . . . . . . . . . . . . . . . . 
+            . . . . . f f f f . . . . . . . 
+            . . . . f b d b b f . . . . . . 
+            . . . f d d d d b b f . . . . . 
+            . . f d d d d d d c b f . . . . 
+            . . f d d d d d d c b f . . . . 
+            . f d d d d d d b b c b f . . . 
+            . f b d d d d d d b b b f . . . 
+            . . f c d d d d b b b f . . . . 
+            . . . f f b b c b f f . . . . . 
+            . . . . . f f f f . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            . . . . . . . . . . . . . . . . 
+            `)
+        sprites.setDataNumber(klei1, "frame", 0)
+        sprites.setDataString(klei1, "kleur", "grijs")
+        keramiek_beschikbaar = 0
+        characterAnimations.clearCharacterState(npc_keramiek)
+        move_npc(npc_keramiek, 24, 3)
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingUp, Predicate.NotMoving))
+        pause(500)
+        characterAnimations.clearCharacterState(npc_keramiek)
+        move_npc(npc_keramiek, 19, 5)
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingDown, Predicate.NotMoving))
+        pause(500)
+        maak_klei_sprite(klei_display1)
+        pause(500)
+        characterAnimations.clearCharacterState(npc_keramiek)
+        move_npc(npc_keramiek, 22, 5)
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingDown, Predicate.NotMoving))
+        npc_keramiek.sayText("Prachtig!", 2000, false)
+        pause(500)
+        maak_klei_sprite(klei_display2)
+        pause(500)
+        characterAnimations.clearCharacterState(npc_keramiek)
+        move_npc(npc_keramiek, 22, 4)
+        characterAnimations.setCharacterState(npc_keramiek, characterAnimations.rule(Predicate.FacingDown, Predicate.NotMoving))
+        pause(500)
+        characterAnimations.clearCharacterState(npc_keramiek)
     })
 }
 /**
@@ -3894,15 +4057,17 @@ let heeftKat = false
 let tooltip: Sprite = null
 let pointer: Sprite = null
 let kroon = 0
-let mySprite: Sprite = null
 let verf: Sprite = null
-let list: Image[] = []
 let keramiek_beschikbaar = 0
+let mySprite: Sprite = null
+let list: Image[] = []
 let minimap2: Sprite = null
 let level_sprites: Sprite[] = []
 let level = 0
 let npc_keramiek: Sprite = null
 let rugzak: Sprite[] = []
+let klei_display2: Sprite = null
+let klei_display1: Sprite = null
 let klei2: Sprite = null
 let klei1: Sprite = null
 let kennisbende_trofee: Sprite = null
