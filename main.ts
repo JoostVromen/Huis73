@@ -1546,20 +1546,26 @@ function maak_klei_sprite (mySprite: Sprite) {
     if (sprites.readDataString(mySprite, "kleur") == "blauw") {
         mySprite.image.replace(13, 6)
         mySprite.image.replace(11, 8)
-        if (!(sprites.readDataBoolean(mySprite, "gebakken"))) {
+        if (sprites.readDataBoolean(mySprite, "gebakken")) {
             mySprite.image.replace(1, 9)
+        } else {
+            mySprite.image.replace(1, 6)
         }
     } else if (sprites.readDataString(mySprite, "kleur") == "rood") {
         mySprite.image.replace(13, 2)
         mySprite.image.replace(11, 14)
-        if (!(sprites.readDataBoolean(mySprite, "gebakken"))) {
+        if (sprites.readDataBoolean(mySprite, "gebakken")) {
             mySprite.image.replace(1, 3)
+        } else {
+            mySprite.image.replace(1, 2)
         }
     } else if (sprites.readDataString(mySprite, "kleur") == "paars") {
         mySprite.image.replace(11, 12)
         mySprite.image.replace(13, 10)
-        if (!(sprites.readDataBoolean(mySprite, "gebakken"))) {
+        if (sprites.readDataBoolean(mySprite, "gebakken")) {
             mySprite.image.replace(1, 11)
+        } else {
+            mySprite.image.replace(1, 12)
         }
     } else {
     	
@@ -1850,34 +1856,6 @@ function draag_kroon () {
     )
     kroon = 1
 }
-function doelen_tooltip () {
-    zoekDoelwit(speler)
-    for (let value of sprites.allOfKind(SpriteKind.NPC)) {
-        if (pointer.overlapsWith(value) && sprites.readDataNumber(tooltip, "ticks") == 0) {
-            tooltip = sprites.create(img`
-                . . . . . . . . . . . . . . . . 
-                . . . . . . f f f f . . . . . . 
-                . . . . . f d d d d f . . . . . 
-                . . . . . f 5 5 5 5 f . . . . . 
-                . . . . . f 5 5 5 5 f . . . . . 
-                . . . . . f 5 5 5 5 f . . . . . 
-                . . . . . . f 5 5 f . . . . . . 
-                . . . . . . f 5 5 f . . . . . . 
-                . . . . . . f 5 5 f . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . f d d f . . . . . . 
-                . . . . . . f 5 5 f . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . . . . . . . . . . 
-                `, SpriteKind.volatile)
-            tooltip.setFlag(SpriteFlag.Ghost, true)
-            tooltip.setPosition(value.x - 0, value.y - 16)
-            sprites.setDataNumber(tooltip, "ticks", 10)
-        }
-    }
-}
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     zoekDoelwit(speler)
     for (let value2 of sprites.allOfKind(SpriteKind.NPC)) {
@@ -1951,6 +1929,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             minimap2.setPosition(125, 35)
         }
     }
+    if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile87`)) {
+        doe_bak_keramiek()
+    }
     if (tiles.tileAtLocationEquals(pointer.tilemapLocation(), assets.tile`myTile79`)) {
         tiles.setTileAt(pointer.tilemapLocation(), assets.tile`myTile81`)
         if (level == 2) {
@@ -1971,11 +1952,21 @@ function geheime_gang () {
             scene.cameraFollowSprite(camera_punt)
             sprites.setDataNumber(camera_punt, "ticks", 5)
             for (let value2 of sprites.allOfKind(SpriteKind.destructable)) {
-                if (value.row == value2.tilemapLocation().row || value.column != value2.tilemapLocation().column) {
-                    value2.startEffect(effects.disintegrate, 500)
-                    value2.setFlag(SpriteFlag.Invisible, true)
-                    value2.setFlag(SpriteFlag.Ghost, true)
-                    tiles.setWallAt(value2.tilemapLocation(), false)
+                if (value.row == value2.tilemapLocation().row && value.column == value2.tilemapLocation().column) {
+                    if (sprites.readDataNumber(value2, "destruct_level") < 4) {
+                        speler.setFlag(SpriteFlag.Invisible, true)
+                        timer.after(3000, function () {
+                            sla_destructable(value2)
+                            pause(500)
+                            sla_destructable(value2)
+                            pause(500)
+                            sla_destructable(value2)
+                            pause(500)
+                            sla_destructable(value2)
+                            pause(500)
+                            speler.setFlag(SpriteFlag.Invisible, false)
+                        })
+                    }
                 }
             }
             break;
@@ -4054,7 +4045,6 @@ let myMinimap: minimap.Minimap = null
 let index2 = 0
 let trofee_opmerkingen: string[] = []
 let heeftKat = false
-let tooltip: Sprite = null
 let pointer: Sprite = null
 let kroon = 0
 let verf: Sprite = null
@@ -4236,7 +4226,6 @@ game.onUpdateInterval(12000, function () {
     }
 })
 game.onUpdateInterval(500, function () {
-    doelen_tooltip()
     for (let value of sprites.allOfKind(SpriteKind.volatile)) {
         sprites.changeDataNumberBy(value, "ticks", -1)
         if (sprites.readDataNumber(value, "ticks") <= 0) {
