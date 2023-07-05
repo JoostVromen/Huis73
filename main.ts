@@ -279,7 +279,7 @@ function init_huis73 () {
         e e f 6 6 6 6 6 6 f e e . 
         . . . f f f f f f . . . . 
         . . . f f . . f f . . . . 
-        `, SpriteKind.NPC), 6, 17, "Schilderen, schetsen, film maken, we doen eigenlijk alles!", 2)
+        `, SpriteKind.NPC), 6, 17, "Tekenen, dansen of muziek maken? Welke cursus ga jij volgen?", 2)
     Brigitta = level_sprite(sprites.create(img`
         . f f f . f f f f . f f f . 
         f f f f f c c c c f f f f f 
@@ -297,7 +297,7 @@ function init_huis73 () {
         . 4 4 f 6 6 6 6 6 6 f 4 4 . 
         . . . . f f f f f f . . . . 
         . . . . f f . . f f . . . . 
-        `, SpriteKind.NPC), 5, 55, "Schilderen, schetsen, film maken, we doen eigenlijk alles!", 2)
+        `, SpriteKind.NPC), 5, 55, "Duik in de boekenkasten en vind jouw favoriet!", 2)
     Minecraft_Steve = level_sprite(sprites.create(img`
         . . . . . . . c c c . . . . . . 
         . . . . . . c b 5 c . . . . . . 
@@ -580,20 +580,20 @@ function init_huis73 () {
         . c b b 3 3 b 3 3 b 3 3 b b c . 
         . . f f f f f f f f f f f f . . 
         `, SpriteKind.Object), 34, 4, "", 2)
-    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 25, 36, "In het Digitaal Atelier kan je alles maken op een MaakAvond, of kom meedoen aan het Uitvinderslab! ", 2)
-    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 7, 40, "Bij Huis73 voorlezen kunnen kinderen elke woensdag of vrijdag genieten van een spannend verhaal!", 2)
-    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 26, 60, "Kan jij ook geen genoeg krijgen van Minecraft? Dan is deze workshop iets voor jou!", 2)
-    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 9, 59, "Dit is de Huis 73 Bibliotheek! Kom spelen, lezen en ontdekken!", 2)
-    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 39, 43, "Bij de CoderDojo kunnen kinderen leren programmeren!", 2)
-    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 22, 8, "De draaischijf, jouw handen en de klei. Een geweldige combinatie waarmee zowel traditionele als vernieuwende vormen gemaakt kunnen worden.", 2)
-    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 10, 22, "Illustreren, tekenen,\\n film maken? Huis73 biedt cursussen voor alle soorten kunst!", 2)
-    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 57, 10, "Bouwen met Bricks! Hou jij ook zo van bouwen?! In deze serie van 3 lessen ga je steeds een creatieve en technische oplossing bedenken en bouwen aan iets dat om een oplossing vraagt!", 2)
-    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 22, 42, "Huis73 Kunst", 2)
-    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 21, 43, "Huis73 Keramiek", 2)
+    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 25, 36, "Experimenteer je graag met uitvinden, technologie en kunst. Er is altijd iets leuks te doen en te maken in het Digitaal Atelier!", 2)
+    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 7, 40, "Elke woensdag of vrijdag kun je komen genieten van een leuk verhaal!", 2)
+    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 26, 60, "Kan jij ook geen genoeg krijgen van Minecraft? Kom dan naar onze werkplaats!", 2)
+    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 9, 59, "Dit is de bibliotheek van Huis73. Duik in de boekenkasten en vind jouw favoriet!", 2)
+    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 39, 43, "Bij CoderDojo kunnen kinderen leren programmeren!", 2)
+    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 22, 8, "Lekker met je handen in de klei, welke vorm maak jij?", 2)
+    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 10, 22, "Tekenen, dansen of muziek maken? Huis73 biedt allerlei verschillende cursussen. Zit er iets leuks voor jou tussen?", 2)
+    level_sprite(sprites.create(assets.image`bord`, SpriteKind.bord), 57, 10, "Hou jij ook zo van bouwen? Maak kennis met techniek en bedenk een creatieve oplossing voor elk vraagstuk.", 2)
+    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 22, 42, "Cursusruimte", 2)
+    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 21, 43, "Keramiekstudio", 2)
     level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 25, 42, "Digitaal Atelier", 2)
-    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 26, 43, "Huis73 Bibliotheek", 2)
-    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 26, 46, "Voorlezen voor kinderen", 2)
-    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 25, 47, "Minecraft workshop", 2)
+    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 26, 43, "Bibliotheek", 2)
+    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 26, 46, "Verhaaltjestijd", 2)
+    level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 25, 47, "Minecraft Werkplaats", 2)
     level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 22, 47, "CoderDojo", 2)
     level_sprite(sprites.create(assets.image`myImage`, SpriteKind.bord), 21, 46, "Bouwen met Bricks", 2)
     level_sprite(sprites.create(img`
@@ -1065,301 +1065,281 @@ function init_huis73 () {
         . . . . e e e e f f f e . . . . 
         `, SpriteKind.Laptop), 42, 40, "", 2)
     maak_qr(img`
-        1111111111111111111111111111111
-        1fffffff1ffff11ff1ff111fffffff1
-        1f11111f11f11f111111f11f11111f1
-        1f1fff1f111f1f1111f1ff1f1fff1f1
-        1f1fff1f1f1fffff1f1ff11f1fff1f1
-        1f1fff1f1ff1f11fff1f1f1f1fff1f1
-        1f11111f1ff111ff1f11ff1f11111f1
-        1fffffff1f1f1f1f1f1f1f1fffffff1
-        111111111ff11111f1ff1f111111111
-        1f111f1fff11ff1111f11ffffff11f1
-        11fff1f1ffff1ff1fff1111fffffff1
-        1ffff11f1111f11fff1111f1ff111f1
-        1fffff1111ffff1111f1ffff1ff1ff1
-        111f11ff11fff111f1f11ff11111f11
-        1f111f11fff1ff1fff1f11ff1fffff1
-        1f1ff11fff11ff1ff1ff111f1fff1f1
-        1111f11111ff111ff1ffff1f1111ff1
-        11111ffff1f1111111f11ff1f111f11
-        1ffff111f1f1111fffff1f1ffff1ff1
-        1111ffff1f1f111fff1f1ff11f1f1f1
-        111f1111ff11ff11f1f1f11f1111ff1
-        1ff1ff1ffffff1fff1fffffffff11f1
-        111111111ff1ff1fffff1f111f111f1
-        1fffffff1fff1ffff1ffff1f1fff1f1
-        1f11111f111ff1f1f1ff1f111f111f1
-        1f1fff1f1f1ffff1f1f1fffffff11f1
-        1f1fff1f11f1f11ff11f11f1f1111f1
-        1f1fff1f11111f1ffffff11111ffff1
-        1f11111f11111f1111ffffff1ff1ff1
-        1fffffff1ff1f111f1f1ffffff11f11
-        1111111111111111111111111111111
+    1111111111111111111111111111111
+    1fffffff1ffff11ff1ff111fffffff1
+    1f11111f11f11f111111f11f11111f1
+    1f1fff1f111f1f1111f1ff1f1fff1f1
+    1f1fff1f1f1fffff1f1ff11f1fff1f1
+    1f1fff1f1ff1f11fff1f1f1f1fff1f1
+    1f11111f1ff111ff1f11ff1f11111f1
+    1fffffff1f1f1f1f1f1f1f1fffffff1
+    111111111ff11111f1ff1f111111111
+    1f111f1fff11ff1111f11ffffff11f1
+    11fff1f1ffff1ff1fff1111fffffff1
+    1ffff11f1111f11fff1111f1ff111f1
+    1fffff1111ffff1111f1ffff1ff1ff1
+    111f11ff11fff111f1f11ff11111f11
+    1f111f11fff1ff1fff1f11ff1fffff1
+    1f1ff11fff11ff1ff1ff111f1fff1f1
+    1111f11111ff111ff1ffff1f1111ff1
+    11111ffff1f1111111f11ff1f111f11
+    1ffff111f1f1111fffff1f1ffff1ff1
+    1111ffff1f1f111fff1f1ff11f1f1f1
+    111f1111ff11ff11f1f1f11f1111ff1
+    1ff1ff1ffffff1fff1fffffffff11f1
+    111111111ff1ff1fffff1f111f111f1
+    1fffffff1fff1ffff1ffff1f1fff1f1
+    1f11111f111ff1f1f1ff1f111f111f1
+    1f1fff1f1f1ffff1f1f1fffffff11f1
+    1f1fff1f11f1f11ff11f11f1f1111f1
+    1f1fff1f11111f1ffffff11111ffff1
+    1f11111f11111f1111ffffff1ff1ff1
+    1fffffff1ff1f111f1f1ffffff11f11
+    1111111111111111111111111111111
         `, 9, 54, "Scan de QR code voor meer informatie over de bieb!", 2)
     maak_qr(img`
         11111111111111111111111111111111111
-        1fffffff11f11fff1ffff1fff11fffffff1
-        1f11111f111f1f1fff1111f11f1f11111f1
-        1f1fff1f1ffff11fff1f1fff1f1f1fff1f1
-        1f1fff1f1ff111fff1f1f11fff1f1fff1f1
-        1f1fff1f1ff11f111ffffff1f11f1fff1f1
-        1f11111f1f11111ff1f111ff1f1f11111f1
-        1fffffff1f1f1f1f1f1f1f1f1f1fffffff1
-        111111111fffff11ff11f1ffff111111111
-        1f1fffff11f11ff1f1f1111fff1fffff111
-        1fffff111f1f1ff11f1ffff1f11ff1ff1f1
-        11f1111ffff1111ff11111f11fff1f1ff11
-        1f1ff1f11fffff11f111fffff1f11ffff11
-        1f1f1f1ff111ff111ff1ff1fff11fff1f11
-        11f11ff1ff1ffff11ff1ff1ff1fff1ffff1
-        1ff1f1ff1ff1ff11f1111ff111fffffff11
-        111f1ff11f11f11ff111ffff11ff1f1f111
-        1f1111ff11ff11f111f1f11ffff1ff111f1
-        111fff1111fffff11ffffffffffff1ff1f1
-        1f111ffff111fff1ffff11111111ff1ff11
-        111f11111fff1f11ff1ffff1f111fffff11
-        1fff11fff111fff111f1f1111f11fff1ff1
-        1f1ffff11111ffff1f1ffff1ff1f11f11f1
-        1f11ff1f1f111f1ff11f1f111ff111f1f11
-        1f11fff1f1f1ff1f1f11ffff11fff1ff1f1
-        1f11fffff1f1ffff11f1f1111ffffff1ff1
-        111111111f11f111111ff11fff111f1f1f1
-        1fffffff111ff1ffff111f1fff1f1f1ff11
-        1f11111f1ff1f1ff1111f1ffff111ffff11
-        1f1fff1f1ffff1f111f1111f1ffffff1ff1
-        1f1fff1f1f1f1ff1111ffffff1f11fffff1
-        1f1fff1f1ff1f111f11f111ffffff111111
-        1f11111f11f1f1111f11fffff1ff1fff111
-        1fffffff1f1f111111f11f111ff1f111f11
-        11111111111111111111111111111111111
-        `, 5, 33, "Scan de QR code voor meer informatie over Verhaaltjestijd!", 2)
-    maak_qr(img`
-        111111111111111111111111111111111111111
-        1fffffff1f1111ff1ff11ff1ff1fff1fffffff1
-        1f11111f11111f11fff1f11f1f111f1f11111f1
-        1f1fff1f111f1ff1f1ff1fff111ff11f1fff1f1
-        1f1fff1f1f111fffff1ff11ff1ff1f1f1fff1f1
-        1f1fff1f1ff11ff1ff1111f1f1f1ff1f1fff1f1
-        1f11111f1f111f11ff1fff1f1fff111f11111f1
-        1fffffff1f1f1f1f1f1f1f1f1f1f1f1fffffff1
-        111111111fff1ff11ffff1f11f1f11111111111
-        1f111f1fff11f1f1f1fffffff111f1fffff11f1
-        1ff11f111ff1f1111f111ff1ffffff111ffff11
-        111f111ff1ff1f1f1fff1111ff11f1fff11f111
-        111f1ff1111111f111ff11f1f1111ff1111ff11
-        1f1fff1ff1f1f111f1f11ff11f1f11fff11fff1
-        11f11f11fff11ff1ff1111fff11ff1f11ff1111
-        11f1f1ffff1fff1ff1f11f1ff11ff111ffff111
-        1ff11f11fffff111f1f1ffff1f111fffff1f111
-        1ff1ffffff1f11fff1ff11fff1111ffff1fff11
-        111f11f11ff1111f111f1f11ff1ffff11f1ff11
-        11fff11f11fff1ffff1f11ffff1ff1111f1f111
-        11f111f11fff11ff1ffff1f1ff1f1111111ff11
-        1ff11fffffff1f1f11fffff1ff11fffff11f111
-        1fff1ff11f1ff1f1f1ff1f1ffff1f111ff11111
-        1f11111ffff11111f1ff1ffff11ff111fffff11
-        1111f1f11f11ff1ff1fff1f1f11f11f1ff1fff1
-        111ff11f11ff11111ffff1ff1f11111f11fff11
-        1fff11111ff1ff11f1f11ff1ffffff111fff111
-        111ff11f111f11f1ffff1ffffff1fffffff1111
-        1111fff111f1f1f11ffffff1f11f1f11111f1f1
-        1ff11ffff1f1ff1f11f111f1f1111fffff1f1f1
-        111111111f1ff111ff1f1f1ff11fff111f11111
-        1fffffff1fff11fff1111fffffff1f1f1f11111
-        1f11111f111ff111f1f111f11f11ff111fff111
-        1f1fff1f1ffff1ff1ffffffff11f1fffffff111
-        1f1fff1f11ff1f1ff1f11f1fff1ffffff1f1ff1
-        1f1fff1f11ff1f1fffff11f1ff11ff1f111f111
-        1f11111f11f1ff11fffff1f1ff11111f1f1ff11
-        1fffffff1f111fff11f1f1f1ff11f1fff11fff1
-        111111111111111111111111111111111111111
-        `, 31, 56, "Scan de QR code voor meer informatie over de Minecraft workshop!", 2)
+    1fffffff1111ff111f11ffffff1fffffff1
+    1f11111f11111111ff1f1ff1111f11111f1
+    1f1fff1f1fff111fff11fffff11f1fff1f1
+    1f1fff1f1ff1ff11f11ff1f11f1f1fff1f1
+    1f1fff1f1f111f1fff111fff111f1fff1f1
+    1f11111f1fffff11111ff111ff1f11111f1
+    1fffffff1f1f1f1f1f1f1f1f1f1fffffff1
+    111111111ff1ff1f1f1ffffff1111111111
+    1f1fffff1111ffff11fff111f11fffff111
+    1fff1ff11ff1f1ff1fffff11ff1ff1ffff1
+    11fff1fff1fff1fffff1111f11ff1f1f111
+    1f1f11111111f1f111ff1111ff111fff111
+    1111f1ffffffff1fff11ffff1ff1fff11f1
+    1f1111f1f11ff1f1f1ff11111f1f11f1ff1
+    11ff11fff11ffff1fff11f1f1ffffffff11
+    11f111111ffffff1f11f11f1f1fff1ff111
+    1f1111ff1f1f1ff1fff1111ff1f1fff11f1
+    1111fff1fff1ff1f1f1ffff1f11ff1ff1f1
+    111111ff11ffff1fff1f1ff111f1ff1ff11
+    11fff111f1f111f11f11f1ff1ff1ffffff1
+    11ff111f11ff1f11111f11f1fff11ff1111
+    1fff1f11fff11f11fff11f1ff1ff11ff1f1
+    1f11fffff111fff111f1f11f111f1f11f11
+    1f1f1f11ffff1f1f1f1fffff11111fffff1
+    1f11f1ff1f1ff11f1ff1ff1f1fffff111f1
+    111111111ff111ff11ffff1f1f111f1f1f1
+    1fffffff11f11f1ffff11f1fff1f1f1ff11
+    1f11111f1f1fffff1fff1f11ff111fff1f1
+    1f1fff1f1f1ff1ff1f11ffff1ffffff1111
+    1f1fff1f1f1111fff1ff11f1fff11ff11f1
+    1f1fff1f1ff1ff11ff111ff1fffff1f1111
+    1f11111f11f1f1fff11f11f1111f1fff111
+    1fffffff1fff1ff1f1ff1111ff1ff111f11
+    11111111111111111111111111111111111
+        `, 5, 33, "Scan de QR code voor meer informatie over Voorlezen!", 2)
     maak_qr(img`
         11111111111111111111111111111111111
-        1fffffff11f1f1f11111fffff11fffffff1
-        1f11111f11f111ffffff1f11111f11111f1
-        1f1fff1f1ff1f1f11f1f11ff111f1fff1f1
-        1f1fff1f1f111f1f11f1f11f1f1f1fff1f1
-        1f1fff1f1f111f11f11ffff1f11f1fff1f1
-        1f11111f1fff11fff1ff1f11111f11111f1
-        1fffffff1f1f1f1f1f1f1f1f1f1fffffff1
-        111111111ff11f11ff111fffff111111111
-        1f1fffff11f1f1fffffff11f111fffff111
-        11f1fff11f1fff1f1111ff1ff11ff1ff1f1
-        11f1f1fffff1f111ff111ff111f11f1ff11
-        1f1f1f111ff11f1f1f111ffffff11fffff1
-        11f1ffff111ff11111f11f1f11f1fff11f1
-        1f1fff11fff1f11f1f1ff1fff11f11ffff1
-        1f1fffff1ffffffff1f11f1111ff11fff11
-        1ff1f1f11f11fff11f111fff1fffffff111
-        1f11ff1fff1f1f1f11ff1f1ff1f1fff11f1
-        1ff1fff111f1ff1f1111fff1f11ff1ff1f1
-        11ff111fff1f1ffff11111f11f1fff1ff11
-        1ff11f11ff11fff1ff1111f1fffffffff11
-        111f111ff1111ff111f1f11f1f11fff1ff1
-        1ff1f1f11f11ff1f1f1ffff1f11f111f1f1
-        1f1fffffff11f1ffffff11ff1f111111f11
-        1f1ff1f1111f1ff1ff11ffff11ff1fff111
-        1f1f11fff1ff1f11f1fff11f1fffff11ff1
-        111111111f1fff111fffff11ff111f1fff1
-        1fffffff111f11f1f11111ffff1f1f1f111
-        1f11111f1fff1fff1f1ffff1ff111ffff11
-        1f1fff1f1f1f1f1f11f1f11f1ffffff1111
-        1f1fff1f1ffff1111fffff11fff11f1fff1
-        1f1fff1f1f1ff1fff1f11f1ffffff1ff111
-        1f11111f111111ffff1f11f111f11fff111
-        1fffffff1fffff11f1f1f111ff1ff111f11
-        11111111111111111111111111111111111
-        `, 17, 5, "Scan de QR code voor meer informatie over Huis73 keramiek workshops!", 2)
+    1fffffff1111ff111f11ffffff1fffffff1
+    1f11111f11ff1111ff1f1ff1111f11111f1
+    1f1fff1f1f1f111fff11fffff11f1fff1f1
+    1f1fff1f1fffff11f11ff1f11f1f1fff1f1
+    1f1fff1f1f11ff1fff111fff111f1fff1f1
+    1f11111f1fff1111111ff111ff1f11111f1
+    1fffffff1f1f1f1f1f1f1f1f1f1fffffff1
+    111111111ff11f1f1f1ffffff1111111111
+    1f1fffff11111fff11fff111f11fffff111
+    11ff1ff11ff1f1ff1fffff11ff1ff1ffff1
+    111fff1ff1fff1fffff1111f11111f1f111
+    1fff11111111f1f111ff1111ffff1fff111
+    1ff11ffffff1ff1fff11ffff1ff1fff11f1
+    1ff1f1f11f1ff1f1f1ff11111fff11f1ff1
+    11ff11ffff1ffff1fff11f1f1fff11fff11
+    11fff111f1fffff1f11f11f111ff11ff111
+    1f1f11ffff1f1ff1fff1111f11f1ff111f1
+    1111f1f1ff11ffff1f1ffff1f11ff1ff1f1
+    11f1111f11ffff11ff1f1ff11111ff1ff11
+    111ff1f1f11111111f11f1ff1f1fffffff1
+    111ff1ff111f1f11111f11f1f1f1fff1111
+    1f111ff111ff1f11fff11f1ff11f11f11f1
+    1f1fffffff11fff111f1f11f1f1ffffff11
+    1f11ff1111ff111f1f1ffffff1111fffff1
+    1f11f1ffff1f111f1ff1ff1f1fffff111f1
+    111111111ff111ff11ffff1f1f111f1f1f1
+    1fffffff11111f11fff11f1fff1f1f1ff11
+    1f11111f1ff1fff11fff1f11ff111fff1f1
+    1f1fff1f1ffff11f1f11ffff1ffffff1111
+    1f1fff1f1f1ff1fff1ff11f1fff11f111f1
+    1f1fff1f1ff1f111ff111ff1fffff1ff111
+    1f11111f11f1f1fff11f11f111111fff111
+    1fffffff1ffffff1f1ff1111fff1f111f11
+    11111111111111111111111111111111111
+        `, 31, 56, "Scan de QR code voor meer informatie over de Minecraft Werkplaats!", 2)
     maak_qr(img`
         1111111111111111111111111111111
-        1fffffff11f11f11f11ff11fffffff1
-        1f11111f1111f1f1f1ff1f1f11111f1
-        1f1fff1f111f111111ffff1f1fff1f1
-        1f1fff1f11ffff11f11f111f1fff1f1
-        1f1fff1f1111f11fffff1f1f1fff1f1
-        1f11111f1f11ff11ff11ff1f11111f1
-        1fffffff1f1f1f1f1f1f1f1fffffff1
-        1111111111fff111ffff1f111111111
-        1f11f1ff1ff11fffff11f1f1f111111
-        1f111f11f1111f111ff11fff11f11f1
-        1fffffff111ff1ff11f1ff1f11fff11
-        111f111111f1ffffff1f11f1ff1ff11
-        1ffff11ff1f111f1fff1ffff11f1ff1
-        1fff1f11f11f1f1f1111ff11f111111
-        1111ffff1f1f111f11ff11ff11ffff1
-        11f111f1ff111ff1ffff1f1111f1f11
-        1f11ffff1ff1111111f11ff1f111f11
-        1111ff1111ffff1f1f1f1ffff1f11f1
-        1f1f1f1fff11f1111f111111f111ff1
-        111f1ff1f1fff11ff1f1f11f1111ff1
-        1f1fff1fff111fff11111fffff1f111
-        111111111ff11f111ff11f111f1fff1
-        1fffffff111f11f11f1f1f1f1f11f11
-        1f11111f1f1111fff11fff111fffff1
-        1f1fff1f11f1111f1ff11fffff11111
-        1f1fff1f1ff1fff111f1ff1f1ffff11
-        1f1fff1f1111f1ff1ffff1f11fff1f1
-        1f11111f11f111ffffff1ff11f11f11
-        1fffffff1f1f11fff1f1ffffff11f11
-        1111111111111111111111111111111
+    1fffffff1fff1ff11f11f11fffffff1
+    1f11111f1f11f1111f1f111f11111f1
+    1f1fff1f11fff1ff1f1f111f1fff1f1
+    1f1fff1f1ffff1fff1ff1f1f1fff1f1
+    1f1fff1f11f1f1fffffff11f1fff1f1
+    1f11111f11ff1ff11ff1ff1f11111f1
+    1fffffff1f1f1f1f1f1f1f1fffffff1
+    111111111fff1f11f1ff1f111111111
+    1f1ff1fff1f11f1f11f1111f11f1ff1
+    111ff11111f111111fffff1fff111f1
+    1f1fff1fff11f1111f1f11f11f1ff11
+    1ff11111111f11ff1111ffff11111f1
+    1f1fffff1f11fffff1f11f11f1ff111
+    1fffff11ff1ff1ffff11f1ff111fff1
+    11fff11ffffff11111fff11f1f1fff1
+    11ffff111111111f111f111f1f11f11
+    1f1ff11f1ff1ff1ff11ffff11ff1f11
+    11f1f1f111111111f1f11ff1f1fff11
+    1f1ff1fffff1f1ffff1111f1ff1f111
+    1111f1f1f11f1fff1ff1f1ff111f111
+    11ffff1f1ff1f1fff1f11fffffff111
+    111111111f1ff11111ff1f111fffff1
+    1fffffff1f1fff1f1f1fff1f1ff1f11
+    1f11111f1f1f11ff1f1fff111ff11f1
+    1f1fff1f11ff1f11ffff1fffff1fff1
+    1f1fff1f1f1ff111ff1f11f11ff11f1
+    1f1fff1f1f1ff1f11fff1f11f11f1f1
+    1f11111f11fff1f11f111f11f1f1f11
+    1fffffff1ff1ff1f1111fff1f111f11
+    1111111111111111111111111111111
+        `, 17, 5, "Scan de QR code voor meer informatie over Keramiekstudio!", 2)
+    maak_qr(img`
+1111111111111111111111111111111
+    1fffffff11f11f11f11ff11fffffff1
+    1f11111f1111f1f1f1ff1f1f11111f1
+    1f1fff1f111f111111ffff1f1fff1f1
+    1f1fff1f11ffff11f11f111f1fff1f1
+    1f1fff1f1111f11fffff1f1f1fff1f1
+    1f11111f1f11ff11ff11ff1f11111f1
+    1fffffff1f1f1f1f1f1f1f1fffffff1
+    1111111111fff111ffff1f111111111
+    1f11f1ff1ff11fffff11f1f1f111111
+    1f111f11f1111f111ff11fff11f11f1
+    1fffffff111ff1ff11f1ff1f11fff11
+    111f111111f1ffffff1f11f1ff1ff11
+    1ffff11ff1f111f1fff1ffff11f1ff1
+    1fff1f11f11f1f1f1111ff11f111111
+    1111ffff1f1f111f11ff11ff11ffff1
+    11f111f1ff111ff1ffff1f1111f1f11
+    1f11ffff1ff1111111f11ff1f111f11
+    1111ff1111ffff1f1f1f1ffff1f11f1
+    1f1f1f1fff11f1111f111111f111ff1
+    111f1ff1f1fff11ff1f1f11f1111ff1
+    1f1fff1fff111fff11111fffff1f111
+    111111111ff11f111ff11f111f1fff1
+    1fffffff111f11f11f1f1f1f1f11f11
+    1f11111f1f1111fff11fff111fffff1
+    1f1fff1f11f1111f1ff11fffff11111
+    1f1fff1f1ff1fff111f1ff1f1ffff11
+    1f1fff1f1111f1ff1ffff1f11fff1f1
+    1f11111f11f111ffffff1ff11f11f11
+    1fffffff1f1f11fff1f1ffffff11f11
+    1111111111111111111111111111111
         `, 25, 28, "Scan de QR code voor meer informatie over het Digitaal Atelier!", 2)
     maak_qr(img`
-        111111111111111111111111111111111111111
-        1fffffff1f1ff1f1f11ff11f1ffff11fffffff1
-        1f11111f111ff1ff1f111f11111f1f1f11111f1
-        1f1fff1f1111111111fffff1f11f111f1fff1f1
-        1f1fff1f1ffff11f1f11f111f1f1111f1fff1f1
-        1f1fff1f1ff1111fff1f11f1f111ff1f1fff1f1
-        1f11111f1ffff1111f1ff1ff11111f1f11111f1
-        1fffffff1f1f1f1f1f1f1f1f1f1f1f1fffffff1
-        111111111fff11111fff1f1ff111ff111111111
-        1f111f1ffff1f1ff111ff11f1f11f1fffff11f1
-        11f111111111111f1ff1fff111ffff111f1ff11
-        111f11fff1fffff11f1f1f1f11ffff11fff1111
-        1ff111111fffff1111ff11f11f1f1f1fff1ff11
-        1f11f1ff1f1f1111fff1fff1ff1ff1ff111fff1
-        111f1ff1f1f1f11ff1f11111f111fff11ff1111
-        1f1ff1ff111ff1f1f11f1fffff11f111ffff111
-        11f111111f1ff11ff1111ff1ff11f1f1ff1f111
-        11f1f1ff11ff1fffff111f11f11111fff1fff11
-        1ffffff1fff111f1111ff1ff1ff1ff111f11f11
-        11f11f1ff1ff1111f11ff1f1fff1f111ff1f111
-        11fffff1f1f11f1ffff1fff1f11f111f111ff11
-        1f1f11ff11ff11ff11f11fff1f1ffffff11f111
-        1ff1f11111f11ffff11f11f1f1fffff1ff11111
-        111f1fff11f11ffffff11f11ff1fff11fffff11
-        11fffff111ff11f111ff1f1f1f11ff11ff1f111
-        1f11111f1f11111f111f111fff11f1ffffffff1
-        1f1ff1f1ff1f11111f11fff1111ffff11f11111
-        1111f1ff1f1ff11f1ff11fff11ffff11ff1f111
-        11111f1111f1f1ff11ff11ff1f11f11fff1f1f1
-        1fffff1f1fff111ffff1ffffff111ffffffff11
-        111111111f11f1fff1ff1f11ff1f1f111f11f11
-        1fffffff1f11111ff11f11fff11f1f1f1f11f11
-        1f11111f111ffffff1111ff1ff1f1f111fff111
-        1f1fff1f1fff1f1fff11ff11ff111fffffff1f1
-        1f1fff1f111ff1f111fff11f1f1f1f1ff111f11
-        1f1fff1f11ff1f1ff11ff1f1f1ff11ff11f1f11
-        1f11111f11fff1f1fff1fff1ff11fff11ffff11
-        1fffffff1fff11ff11ff11ffff11f111f11fff1
-        111111111111111111111111111111111111111
-        `, 42, 37, "Scan de QR code voor meer informatie over de CoderDojo!", 2)
+        11111111111111111111111111111111111
+    1fffffff11f1ff111f11ffffff1fffffff1
+    1f11111f11111111ff1f1ff1111f11111f1
+    1f1fff1f1f1f111fff11fffff11f1fff1f1
+    1f1fff1f1f11ff11f11ff1f11f1f1fff1f1
+    1f1fff1f1f11111fff111fff111f1fff1f1
+    1f11111f1ffff111111ff111ff1f11111f1
+    1fffffff1f1f1f1f1f1f1f1f1f1fffffff1
+    111111111ff1111f1f1ffffff1111111111
+    1f1fffff11111fff11fff111f11fffff111
+    11ff11f11ff1f1ff1fffff11ff1ff1ffff1
+    111ffffff11ff1fffff1111f11111f1f111
+    1f1f1f111111f1f111ff1111ff1f1fff111
+    1ff1fffff111f11fff11ffff1ff11ff11f1
+    1ffff1f11f1ffff1f1ff11111f1f11f1ff1
+    11ff11ff111f1ff1fff11f1f11ff11fff11
+    11f1f111ffff1ff1f11f11f1f1ff11ff111
+    1f1f11ff1f1f1ff1fff1111ff1f1ff111f1
+    1111f1f1ff11ff1f1f1ffff1f11ff1ff1f1
+    11f1111f1111ff11ff1f1ff111f1ff1ff11
+    11fff111f1f1111f1f11f1ff1f11ffffff1
+    11ff11ff11f111ff111f11f1fff1fff1111
+    1f111f11f1f11111fff11f1ff11f111f1f1
+    1f111fff1f1111f111f1f11f1f1ff1f1f11
+    1f111f11f1ffff1f1f1fffffff1111ffff1
+    1f1ff1ff1f1f111f1ff1ff1fffffff111f1
+    111111111ff1111f11ffff1f1f111f1f1f1
+    1fffffff11111ffffff11f1fff1f1f1ff11
+    1f11111f1f1ffff11fff1f11ff111fff1f1
+    1f1fff1f1ff1f1111f11ffff1ffffff1111
+    1f1fff1f1f1f1ffff1ff11f1fff11ff11f1
+    1f1fff1f1ff11111ff111ff1fffff1f1111
+    1f11111f11f1fffff11f11f111ff1fff111
+    1fffffff1ffffff1f1ff1111fffff111f11
+    11111111111111111111111111111111111
+        `, 42, 37, "Scan de QR code voor meer informatie over CoderDojo!", 2)
     maak_qr(img`
-        111111111111111111111111111111111111111
-        1fffffff1f11fffffff1ffffff11ff1fffffff1
-        1f11111f1111f1ff111ff11f1f111f1f11111f1
-        1f1fff1f11fff11ff1f111ff111f1f1f1fff1f1
-        1f1fff1f1fff111f111f111ff1ff1f1f1fff1f1
-        1f1fff1f1ff1ffff11f11111f1f1ff1f1fff1f1
-        1f11111f1f1f1fff11f1ff111f1f111f11111f1
-        1fffffff1f1f1f1f1f1f1f1f1f1f1f1fffffff1
-        111111111f111111f11111ff1f1f11111111111
-        1f111f1ffff1f1ffff11fff1f11ff1fffff11f1
-        1fff1f111f1111f1111ff1fffffffff11ff1f11
-        11f1111ff1f1111ff1f1f111ff11f1fff11f111
-        1ffff111f11f1f11fff1fff1ff111ff1f11ff11
-        1ff11fffff1111f111ff11ffff1f11fff1ffff1
-        1f1ff111111f1ff1f11f1111f11ff1f11ff1f11
-        111111ff1fff11f1f1f1111ff1fff111ffff111
-        1f1111f11f1f1fffffffffff1f1f1ff1ff1f1f1
-        1f1f1f1fff1ff111111f11f1ff1f111ff1fff11
-        11f1ff11f1f111f11ff1ffffff11ff111ff1f11
-        1f11ffff11fff11f1f1f1ffff11ff111f111111
-        1f1ff1f1f111ff1111ff11f1ff1fff11ff1ff11
-        1ff1ffff111fffffffffffff1f11fffff11f111
-        1fffff11ffff11f1f1f11f11fff1f111ff11111
-        111f11ff1ff1f11fff1f111ff111f11fffff111
-        1ff1f1f1fffff1ff1f1111f1f11f1111ff1fff1
-        11ff1f1ff1f1ff1f1f111f11111f11fff1ff1f1
-        1f111111f1f1f1ff111ff1f1fff1ff111ff1111
-        111111ff11f111f1f111f111f1f1fffff11f111
-        111ff1111f1fff11fff1fffff11f1f11ff1fff1
-        1ff1fffff11f1ff11fff11ff11111fffff1fff1
-        111111111f1fff11f11111f1f1ffff111f11111
-        1fffffff1f11fff1fff11f11fff11f1f1f11111
-        1f11111f11fff11f1fff1f1f1f11ff111fff1f1
-        1f1fff1f1ff1f111111ff11ff11f1ffffffff11
-        1f1fff1f1111f1111f11ff11ff1ffffff1ff1f1
-        1f1fff1f11ff1f111ff11ff1ff11ff1f11f1111
-        1f11111f111f1ff111ff11ffff1111f11ffff11
-        1fffffff1ffff111ffffffffff11f111f11fff1
-        111111111111111111111111111111111111111
+        1111111111111111111111111111111
+    1fffffff11f11ffff1ffff1fffffff1
+    1f11111f11111111ff1f111f11111f1
+    1f1fff1f11f1111fffff111f1fff1f1
+    1f1fff1f111ff11fff1fff1f1fff1f1
+    1f1fff1f1111f1ffffff111f1fff1f1
+    1f11111f1f111f1ff1fff11f11111f1
+    1fffffff1f1f1f1f1f1f1f1fffffff1
+    1111111111f1f11f1ff1ff111111111
+    1f11f1ff1fff11ff1f11f1f1f111111
+    1ff1111111f1ff111f111f1ff1f11f1
+    1f1f1fffff111f1f1f11fff1f1fff11
+    1111ff11fff1f1f1ff11ff1f111ff11
+    1f1111fff1f1f1f1f1ffff1ff1f1ff1
+    1111fff1f111111f1f11ff111111111
+    11ff1f1fffff1ff11f111f1f1fffff1
+    1ff11ff1f11f11fff1ff111ffff1f11
+    111111ff1ffff1fff1fff1111111f11
+    11ff1ff1fffff11f1fff11fff1f11f1
+    1f1fff1f111f11f111f111f1ff11ff1
+    1111f111ff111ff11fff1ff11111ff1
+    1f1f11ffff11f11f1f11ffffff1f111
+    111111111ffffff11fffff111f1fff1
+    1fffffff111111ff11ff1f1f1f11f11
+    1f11111f1ff11ff1111fff111ffff11
+    1f1fff1f11f1111f11f11fffff11111
+    1f1fff1f1fff11ff11f1111f1ffff11
+    1f1fff1f1111ff1111f111111fff1f1
+    1f11111f111f111ff1ff1f1ff111f11
+    1fffffff1f1f1f1f11f11fff11f1f11
+    1111111111111111111111111111111
         `, 57, 7, "Scan de QR code voor meer informatie over Bouwen met Bricks!", 2)
     maak_qr(img`
         1111111111111111111111111111111
-        1fffffff1fff1ff1ff1f111fffffff1
-        1f11111f1111fff1111ff11f11111f1
-        1f1fff1f11f11111ffffff1f1fff1f1
-        1f1fff1f1ff1f1ff1f1ff11f1fff1f1
-        1f1fff1f1ffff11fffff1f1f1fff1f1
-        1f11111f1ff1fff11111ff1f11111f1
-        1fffffff1f1f1f1f1f1f1f1fffffff1
-        111111111fffff1f11ff1f111111111
-        1f111f1ffff11f11f1f11ffffff11f1
-        1111f111f11f1f1ff11f111fffffff1
-        111fffff11f1ff1ffff111f1ff111f1
-        11111ff1f1f1ff11f1ffffff1ff1ff1
-        111fff1f11f11fff1ff11ff11111f11
-        1f1ff111f11fff1fff1111ff1fffff1
-        1ffff1ff11111ffff1ff111f1fff1f1
-        111ffff11fff1ff11ff1ff1f1111ff1
-        11ff11fffff111f11ff11ff1f111f11
-        1ff1fff1f1f1ffffff1f1f1ffff1ff1
-        11111f1ff111f111ffff1ff11f1f1f1
-        11111f11f1f1111f11fff11f1111ff1
-        1fff11ffffff1ffff1f1fffffff11f1
-        111111111f111f11ff111f111f111f1
-        1fffffff1f1ff1fff1ffff1f1fff1f1
-        1f11111f11111ff1f1ff1f111f11111
-        1f1fff1f1f1111f11ff1fffffff1f11
-        1f1fff1f111f111fff1111f1f1111f1
-        1f1fff1f11f1fff1f111f11111ffff1
-        1f11111f11fff1f11ff1ffff1ff1ff1
-        1fffffff1f1ffffff1f1ffffff11f11
-        1111111111111111111111111111111
-        `, 10, 15, "Scan de QR code voor meer informatie over Huis73 Amateurkunst!", 2)
+    1fffffff1f1f1ffff111f11fffffff1
+    1f11111f1ffffff11f1f111f11111f1
+    1f1fff1f11f1ff111f1f111f1fff1f1
+    1f1fff1f1f1ff11ff1ff1f1f1fff1f1
+    1f1fff1f1111f11f1ffff11f1fff1f1
+    1f11111f11f1fff1fff1ff1f11111f1
+    1fffffff1f1f1f1f1f1f1f1fffffff1
+    111111111fffff11ffff1f111111111
+    1f1ff1fff1ff1ff1f1f1111f11f1ff1
+    11f11111ff11fffff1ffff1fff111f1
+    1f11fffff11f1ff11f1f11f11f1ff11
+    1f1f1111ffff11111f11ffff11111f1
+    1f1ff11ff111ff1ff1f11f11f1ff111
+    11f1ff11f1f1111f1f11f1ff111fff1
+    1f1ffffff1f1fff1fffff11f1f1fff1
+    1f111ff1ffff111f1f1f111f1f11f11
+    11fff11f11fff11fff1ffff11ff1f11
+    11f1f111f1fff11f1ff11ff1f1fff11
+    1f111ffff1f1ffffff1111f1ff1f111
+    11111ff1f1fff1ff11f1f1ff111f111
+    11f1f11fffff11ff1ff11fffffff111
+    111111111fff1f11ffff1f111fffff1
+    1fffffff1f1ff11ff11fff1f1ff1f11
+    1f11111f1ff11ffff11fff111ff11f1
+    1f1fff1f111f1f111f1f1fffff1f1f1
+    1f1fff1f1f1f11f1111111f11ff1f11
+    1f1fff1f1f1ff1f111ff1f11f11f1f1
+    1f11111f11111f11f1ff1f11f1f1f11
+    1fffffff1fffffff11fffff1f111f11
+    1111111111111111111111111111111
+        `, 10, 15, "Scan de QR code voor meer informatie over Huis73 Cursussen!", 2)
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Skelet, function (sprite, otherSprite) {
     pijn()
@@ -1387,11 +1367,11 @@ scene.onHitWall(SpriteKind.Player, function (sprite, location) {
         Jasper.sayText("Welkom in het Digitaal Atelier!", 3000, false)
         Brigitta.sayText("Welkom in de Bibliotheek!", 3000, false)
         Chris.sayText("Welkom bij de CoderDojo!", 3000, false)
-        Minecraft_Steve.sayText("Welkom bij de Minecraft workshop!", 3000, false)
+        Minecraft_Steve.sayText("Welkom bij de Minecraft werkplaats!", 3000, false)
         Marloes.sayText("Welkom bij Verhaaltjestijd!", 3000, false)
         npc_kennisbende.sayText("Welkom bij de Bouwen met Bricks!", 3000, false)
         npc_keramiek.sayText("Welkom in de Keramiekstudio!", 3000, false)
-        npc_kunst.sayText("Welkom in onze Creatieve Ruimte!", 3000, false)
+        npc_kunst.sayText("Welkom in onze Cursusruimte!", 3000, false)
     }
     if (tiles.tileAtLocationEquals(location, assets.tile`myTile20`)) {
         tiles.setTileAt(location, assets.tile`myTile6`)
@@ -3347,9 +3327,10 @@ function eindfeest () {
     hitbox.setFlag(SpriteFlag.Ghost, true)
     effects.confetti.startScreenEffect(5000)
     pause(4000)
-    game.showLongText("Gefeliciteerd! Je hebt alle huizen gevonden! Je bent een echte Huis73-fan!", DialogLayout.Bottom)
+    game.showLongText("Gefeliciteerd! Je hebt alle huizen gevonden! Je bent een echte Huis73 kenner! ", DialogLayout.Bottom)
+    game.showLongText("Als beloning krijg jij je eigen Huis73 sleutelhanger. Haal 'm op bij een Huis73 bibliotheek bij jou in de buurt. Gebruik het codewoord VLEERMUIS (pssst.... niet doorvertellen! OP=OP)", DialogLayout.Bottom)
     if (kroon == 0) {
-        game.showLongText("Er is in deze wereld ook nog een geheime kroon te vinden! Speel door om hem te zoeken!", DialogLayout.Bottom)
+        game.showLongText("Wil je nog verder spelen? Ga op zoek naar de kroon en speel Huis73 de Game helemaal uit.", DialogLayout.Bottom)
     } else {
         game.showLongText("Door het spel uit te spelen en de kroon te vinden heb je echt alle geheimen ontdekt!", DialogLayout.Bottom)
     }
@@ -4139,7 +4120,7 @@ game.setDialogFrame(img`
     `)
 game.showLongText("Ontdek hier de wereld van Huis73!", DialogLayout.Top)
 game.showLongText("Met de 'A' knop kun je dingen openmaken en praten!", DialogLayout.Center)
-game.showLongText("Ga op ontdekkingsreis en verzamel alle items!", DialogLayout.Bottom)
+game.showLongText("Ga op ontdekkingsreis en verzamel alle 8 items!", DialogLayout.Bottom)
 teken_health()
 // Hitbox logica voor elk frame
 game.onUpdate(function () {
